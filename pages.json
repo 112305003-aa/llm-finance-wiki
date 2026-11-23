@@ -40,12 +40,158 @@
     "新聞情緒"
    ],
    "sources": [
+    "2019-araci-finbert",
+    "2023-lopez-lira-chatgpt-forecast"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2019-araci-finbert",
+    "2023-lopez-lira-chatgpt-forecast",
+    "domain-specific-pretraining",
+    "look-ahead-bias",
+    "news-return-predictability"
+   ]
+  },
+  {
+   "slug": "long-short-sentiment-strategy",
+   "path": "wiki/concepts/long-short-sentiment-strategy.md",
+   "title": "多空情緒策略（Long-short Sentiment Strategy）",
+   "type": "concept",
+   "summary": "買進好消息股票、放空壞消息股票，用來檢驗情緒訊號有沒有用",
+   "tags": [
+    "trading-strategy",
+    "sentiment",
+    "evaluation"
+   ],
+   "aliases": [
+    "多空",
+    "long-short",
+    "多空組合",
+    "Sharpe ratio",
+    "夏普值"
+   ],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "news-return-predictability",
+    "transaction-costs"
+   ]
+  },
+  {
+   "slug": "look-ahead-bias",
+   "path": "wiki/concepts/look-ahead-bias.md",
+   "title": "前瞻偏誤（Look-ahead Bias）",
+   "type": "concept",
+   "summary": "回測時不小心用到「當時還不知道的資訊」，讓績效看起來比實際好",
+   "tags": [
+    "bias",
+    "backtesting",
+    "evaluation"
+   ],
+   "aliases": [
+    "前瞻偏誤",
+    "look-ahead",
+    "前視偏誤",
+    "記憶",
+    "memorization",
+    "知識截止日"
+   ],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "news-return-predictability"
+   ]
+  },
+  {
+   "slug": "market-efficiency",
+   "path": "wiki/concepts/market-efficiency.md",
+   "title": "市場效率與資訊擴散（Market Efficiency）",
+   "type": "concept",
+   "summary": "市場多快把新資訊反映進價格；LLM 普及可能讓它變快",
+   "tags": [
+    "market-efficiency",
+    "return-prediction"
+   ],
+   "aliases": [
+    "效率市場",
+    "反應不足",
+    "underreaction",
+    "資訊擴散",
+    "套利限制"
+   ],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast",
     "2019-araci-finbert"
    ],
    "updated": "2026-11-23",
    "links": [
     "2019-araci-finbert",
-    "domain-specific-pretraining"
+    "2023-lopez-lira-chatgpt-forecast",
+    "news-return-predictability"
+   ]
+  },
+  {
+   "slug": "news-return-predictability",
+   "path": "wiki/concepts/news-return-predictability.md",
+   "title": "新聞與報酬可預測性（News-based Return Predictability）",
+   "type": "concept",
+   "summary": "新聞出來之後，股價會不會繼續往同一方向走，讓人有機會預測",
+   "tags": [
+    "return-prediction",
+    "sentiment",
+    "market-efficiency"
+   ],
+   "aliases": [
+    "可預測性",
+    "隔日報酬",
+    "漂移",
+    "post-news drift",
+    "新聞漂移"
+   ],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2019-araci-finbert"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2019-araci-finbert",
+    "2023-lopez-lira-chatgpt-forecast",
+    "long-short-sentiment-strategy",
+    "look-ahead-bias",
+    "market-efficiency",
+    "transaction-costs"
+   ]
+  },
+  {
+   "slug": "transaction-costs",
+   "path": "wiki/concepts/transaction-costs.md",
+   "title": "交易成本（Transaction Costs）",
+   "type": "concept",
+   "summary": "手續費、稅、價差與衝擊成本；每天換股的策略特別怕它",
+   "tags": [
+    "backtesting",
+    "trading-strategy"
+   ],
+   "aliases": [
+    "交易成本",
+    "bps",
+    "基點",
+    "成本敏感度",
+    "衝擊成本"
+   ],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "long-short-sentiment-strategy"
    ]
   },
   {
@@ -62,10 +208,16 @@
    "updated": "2026-11-23",
    "links": [
     "2019-araci-finbert",
+    "2023-lopez-lira-chatgpt-forecast",
     "domain-specific-pretraining",
     "financial-sentiment-analysis",
     "log",
-    "overview"
+    "long-short-sentiment-strategy",
+    "look-ahead-bias",
+    "market-efficiency",
+    "news-return-predictability",
+    "overview",
+    "transaction-costs"
    ]
   },
   {
@@ -96,6 +248,7 @@
    "updated": "2026-11-23",
    "links": [
     "2019-araci-finbert",
+    "2023-lopez-lira-chatgpt-forecast",
     "financial-sentiment-analysis",
     "index"
    ]
@@ -122,6 +275,36 @@
    "venue": "arXiv preprint（University of Amsterdam 碩士論文）",
    "url": "https://arxiv.org/abs/1908.10063",
    "raw": "raw/2019-araci-finbert.md",
+   "tier": "B",
+   "kind": "paper"
+  },
+  {
+   "slug": "2023-lopez-lira-chatgpt-forecast",
+   "path": "wiki/sources/2023-lopez-lira-chatgpt-forecast.md",
+   "title": "Can ChatGPT Forecast Stock Price Movements? Return Predictability and Large Language Models",
+   "type": "source",
+   "summary": "讓 GPT-4 判斷新聞標題好壞，能抓到市場初始反應，並預測之後 1–2 天的漂移",
+   "tags": [
+    "sentiment",
+    "return-prediction",
+    "market-efficiency"
+   ],
+   "aliases": [],
+   "sources": [],
+   "updated": "2026-11-23",
+   "links": [
+    "financial-sentiment-analysis",
+    "long-short-sentiment-strategy",
+    "look-ahead-bias",
+    "market-efficiency",
+    "news-return-predictability",
+    "transaction-costs"
+   ],
+   "authors": "Alejandro Lopez-Lira, Yuehua Tang",
+   "year": "2023",
+   "venue": "arXiv preprint（v6, 2025-10）／SSRN 4412788",
+   "url": "https://arxiv.org/abs/2304.07619",
+   "raw": "raw/2023-lopez-lira-chatgpt-forecast.md",
    "tier": "B",
    "kind": "paper"
   }

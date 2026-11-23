@@ -8,20 +8,26 @@ updated: 2026-11-23
 
 > 本頁由 `python3 tools/wiki.py build` 自動產生，請勿手動編輯。
 
-共 5 頁。
+共 11 頁。
 
 ## 總覽（1）
 
 - [[overview|總覽：LLM 在金融與量化交易]] — 這個 wiki 在回答什麼問題、目前的主論點是什麼
 
-## 概念（2）
+## 概念（7）
 
 - [[domain-specific-pretraining|領域再預訓練（Domain-specific Pre-training）]] — 把通用語言模型再用某個領域（如金融）的文字訓練一次
 - [[financial-sentiment-analysis|金融情緒分析（Financial Sentiment Analysis）]] — 讓電腦判斷一段金融文字是好消息、壞消息還是中性
+- [[long-short-sentiment-strategy|多空情緒策略（Long-short Sentiment Strategy）]] — 買進好消息股票、放空壞消息股票，用來檢驗情緒訊號有沒有用
+- [[look-ahead-bias|前瞻偏誤（Look-ahead Bias）]] — 回測時不小心用到「當時還不知道的資訊」，讓績效看起來比實際好
+- [[market-efficiency|市場效率與資訊擴散（Market Efficiency）]] — 市場多快把新資訊反映進價格；LLM 普及可能讓它變快
+- [[news-return-predictability|新聞與報酬可預測性（News-based Return Predictability）]] — 新聞出來之後，股價會不會繼續往同一方向走，讓人有機會預測
+- [[transaction-costs|交易成本（Transaction Costs）]] — 手續費、稅、價差與衝擊成本；每天換股的策略特別怕它
 
-## 來源（1）
+## 來源（2）
 
 - [[2019-araci-finbert|FinBERT: Financial Sentiment Analysis with Pre-trained Language Models]]｜2019｜B 級 — 把 BERT 再用金融新聞訓練，做成金融句子的正／負／中性分類器
+- [[2023-lopez-lira-chatgpt-forecast|Can ChatGPT Forecast Stock Price Movements? Return Predictability and Large Language Models]]｜2023｜B 級 — 讓 GPT-4 判斷新聞標題好壞，能抓到市場初始反應，並預測之後 1–2 天的漂移
 
 ## 其他（1）
 

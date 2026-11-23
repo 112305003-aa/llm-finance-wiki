@@ -16,3 +16,9 @@ updated: 2026-11-23
 - 修改：wiki/overview.md
 - 備註：碩士論文，B 級；讀全文 11 頁
 - lint 第一次跑出 6 個 ERROR（表格數字沒附 §、發展脈絡沒用標準引用格式、連到還沒建的頁），修正後 0 ERROR
+
+## [2026-11-23] ingest | Can ChatGPT Forecast Stock Price Movements?（v6）
+- 新增：raw/2023-lopez-lira-chatgpt-forecast.md、wiki/sources/2023-lopez-lira-chatgpt-forecast.md、concepts/news-return-predictability、long-short-sentiment-strategy、transaction-costs、look-ahead-bias、market-efficiency
+- 修改：concepts/financial-sentiment-analysis（加第 3 代 LLM）、overview
+- 備註：讀 v6（142 頁）正文 §1–§9；與 FinBERT 沒有矛盾（FinBERT 只做分類，本篇測報酬）
+- lint 擋下 2 個 ERROR（定義句裡的 0.01% 被當成數據、關聯段落的 20 bps 沒附 §），已修正

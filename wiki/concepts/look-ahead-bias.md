@@ -4,7 +4,7 @@ type: concept
 summary: 回測時不小心用到「當時還不知道的資訊」，讓績效看起來比實際好
 tags: [bias, backtesting, evaluation]
 aliases: [前瞻偏誤, look-ahead, 前視偏誤, 記憶, memorization, 知識截止日]
-sources: [2023-lopez-lira-chatgpt-forecast, 2023-glasserman-look-ahead-bias, 2025-chen-chatgpt-deepseek]
+sources: [2023-lopez-lira-chatgpt-forecast, 2023-glasserman-look-ahead-bias, 2025-chen-chatgpt-deepseek, 2024-chen-historical-returns]
 updated: 2026-11-23
 ---
 
@@ -29,6 +29,8 @@ updated: 2026-11-23
 - **2025**｜另一篇認為在訓練期間內使用問題不大，因為語言意義穩定、2021-09 之後表現沒變差（[[2025-chen-chatgpt-deepseek]] §1）。預印本。
 
 > ⚠️ **矛盾**（已處理，見 [[in-sample-vs-out-of-sample-llm-backtest]]）：Lopez-Lira & Tang 認為必須用截止日後的樣本（[[2023-lopez-lira-chatgpt-forecast]] §4）；Chen 等人用 1996–2022 的樣本，認為問題不大（[[2025-chen-chatgpt-deepseek]] §1）。
+
+- **2024**｜後續研究採用匿名化，只給模型數字、不給公司名稱（[[2024-chen-historical-returns]] §2）。
 
 ## 常見誤解
 

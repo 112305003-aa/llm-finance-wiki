@@ -51,3 +51,9 @@ updated: 2026-11-23
 - 新增：wiki/comparisons/stock-vs-market-news-asymmetry.md、wiki/comparisons/in-sample-vs-out-of-sample-llm-backtest.md
 - 修改：四處 ⚠️ 改為「已處理」；Chen 等人的來源頁與概念頁加上「樣本內」警語；overview 加第 5 點與證據標準
 - 備註：使用者決定「並陳，說明是不同層次」與「以樣本外為標準，樣本內加警語」
+
+## [2026-11-23] ingest | What Does ChatGPT Make of Historical Stock Returns?
+- 新增：raw/2024-chen-historical-returns.md、wiki/sources/2024-chen-historical-returns.md、wiki/concepts/llm-behavioral-bias.md
+- 修改：concepts/look-ahead-bias、distraction-effect、overview
+- 備註：與現有 wiki 沒有矛盾（任務不同：看數字預測，不是讀新聞）；依使用者先前的決定，在樣本內結果加上警語；比賽場數前後不一致，標 ❓
+- hook 擋下 1 個 ERROR（方法描述有「報酬」字樣與樣本數，被判為績效行）→ 補條件

@@ -17,6 +17,8 @@ updated: 2026-11-23
 4. **「模型偷看答案」不是唯一的坑**：遮掉公司名稱後，GPT-3.5 的樣本內績效反而更好，代表它對公司的既有印象（分心效應）會干擾判斷，而且在樣本外也存在（[[2023-glasserman-look-ahead-bias]] §4）。
 5. **大盤也可以預測，但方向和個股相反**：華爾街日報頭版的「好消息比例」能預測未來 1–6 個月的大盤，壞消息則當月就被消化（[[2025-chen-chatgpt-deepseek]] §4）；個股則是壞消息反應不足，見 [[stock-vs-market-news-asymmetry]]。這是樣本內的結果。
 
+6. **LLM 也有人類的偏誤**：只看歷史報酬時，GPT-4o 會過度外推、過度樂觀（[[2024-chen-historical-returns]] §1）。
+
 **本 wiki 的證據標準**：LLM 回測以知識截止日後的樣本外結果為主，見 [[in-sample-vs-out-of-sample-llm-backtest]]。
 
 ## 從哪裡開始讀

@@ -32,4 +32,4 @@ LLM 讀過很多關於大公司的文章。問它「這則標題對 Google 是�
 
 ## 相關頁面
 
-- [[look-ahead-bias]]、[[news-return-predictability]]
+- [[look-ahead-bias]]、[[news-return-predictability]]、[[llm-behavioral-bias]]

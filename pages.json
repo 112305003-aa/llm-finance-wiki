@@ -135,6 +135,7 @@
    "updated": "2026-11-23",
    "links": [
     "2023-glasserman-look-ahead-bias",
+    "llm-behavioral-bias",
     "look-ahead-bias",
     "news-return-predictability"
    ]
@@ -196,6 +197,36 @@
    ]
   },
   {
+   "slug": "llm-behavioral-bias",
+   "path": "wiki/concepts/llm-behavioral-bias.md",
+   "title": "LLM 的行為偏誤（Behavioral Biases in LLMs）",
+   "type": "concept",
+   "summary": "LLM 從人類文字學到人類的偏誤：過度外推、過度樂觀",
+   "tags": [
+    "bias",
+    "models"
+   ],
+   "aliases": [
+    "行為偏誤",
+    "外推",
+    "extrapolation",
+    "過度樂觀",
+    "miscalibration",
+    "校準"
+   ],
+   "sources": [
+    "2024-chen-historical-returns",
+    "2023-glasserman-look-ahead-bias"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-glasserman-look-ahead-bias",
+    "2024-chen-historical-returns",
+    "distraction-effect",
+    "model-scale"
+   ]
+  },
+  {
    "slug": "long-short-sentiment-strategy",
    "path": "wiki/concepts/long-short-sentiment-strategy.md",
    "title": "多空情緒策略（Long-short Sentiment Strategy）",
@@ -248,12 +279,14 @@
    "sources": [
     "2023-lopez-lira-chatgpt-forecast",
     "2023-glasserman-look-ahead-bias",
-    "2025-chen-chatgpt-deepseek"
+    "2025-chen-chatgpt-deepseek",
+    "2024-chen-historical-returns"
    ],
    "updated": "2026-11-23",
    "links": [
     "2023-glasserman-look-ahead-bias",
     "2023-lopez-lira-chatgpt-forecast",
+    "2024-chen-historical-returns",
     "2025-chen-chatgpt-deepseek",
     "distraction-effect",
     "in-sample-vs-out-of-sample-llm-backtest",
@@ -403,6 +436,7 @@
     "2019-araci-finbert",
     "2023-glasserman-look-ahead-bias",
     "2023-lopez-lira-chatgpt-forecast",
+    "2024-chen-historical-returns",
     "2024-kirtac-sentiment-trading",
     "2025-chen-chatgpt-deepseek",
     "aggregate-market-prediction",
@@ -410,6 +444,7 @@
     "domain-specific-pretraining",
     "financial-sentiment-analysis",
     "in-sample-vs-out-of-sample-llm-backtest",
+    "llm-behavioral-bias",
     "log",
     "long-short-sentiment-strategy",
     "look-ahead-bias",
@@ -452,6 +487,7 @@
     "2019-araci-finbert",
     "2023-glasserman-look-ahead-bias",
     "2023-lopez-lira-chatgpt-forecast",
+    "2024-chen-historical-returns",
     "2024-kirtac-sentiment-trading",
     "2025-chen-chatgpt-deepseek",
     "financial-sentiment-analysis",
@@ -541,6 +577,34 @@
    "venue": "arXiv preprint（v6, 2025-10）／SSRN 4412788",
    "url": "https://arxiv.org/abs/2304.07619",
    "raw": "raw/2023-lopez-lira-chatgpt-forecast.md",
+   "tier": "B",
+   "kind": "paper"
+  },
+  {
+   "slug": "2024-chen-historical-returns",
+   "path": "wiki/sources/2024-chen-historical-returns.md",
+   "title": "What Does ChatGPT Make of Historical Stock Returns? Extrapolation and Miscalibration in LLM Stock Return Forecasts",
+   "type": "source",
+   "summary": "給 GPT-4o 看過去報酬請它預測，它和人一樣過度外推、過度樂觀",
+   "tags": [
+    "bias",
+    "models",
+    "evaluation"
+   ],
+   "aliases": [],
+   "sources": [],
+   "updated": "2026-11-23",
+   "links": [
+    "distraction-effect",
+    "in-sample-vs-out-of-sample-llm-backtest",
+    "llm-behavioral-bias",
+    "look-ahead-bias"
+   ],
+   "authors": "Shuaiyu Chen, T. Clifton Green, Huseyin Gulen, Dexin Zhou",
+   "year": "2024",
+   "venue": "arXiv preprint",
+   "url": "https://arxiv.org/abs/2409.11540",
+   "raw": "raw/2024-chen-historical-returns.md",
    "tier": "B",
    "kind": "paper"
   },

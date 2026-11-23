@@ -16,11 +16,13 @@
     "金融領域預訓練"
    ],
    "sources": [
-    "2019-araci-finbert"
+    "2019-araci-finbert",
+    "2024-kirtac-sentiment-trading"
    ],
    "updated": "2026-11-23",
    "links": [
     "2019-araci-finbert",
+    "2024-kirtac-sentiment-trading",
     "financial-sentiment-analysis"
    ]
   },
@@ -41,14 +43,17 @@
    ],
    "sources": [
     "2019-araci-finbert",
-    "2023-lopez-lira-chatgpt-forecast"
+    "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading"
    ],
    "updated": "2026-11-23",
    "links": [
     "2019-araci-finbert",
     "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading",
     "domain-specific-pretraining",
     "look-ahead-bias",
+    "model-scale",
     "news-return-predictability"
    ]
   },
@@ -71,11 +76,13 @@
     "夏普值"
    ],
    "sources": [
-    "2023-lopez-lira-chatgpt-forecast"
+    "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading"
    ],
    "updated": "2026-11-23",
    "links": [
     "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading",
     "news-return-predictability",
     "transaction-costs"
    ]
@@ -137,6 +144,34 @@
    ]
   },
   {
+   "slug": "model-scale",
+   "path": "wiki/concepts/model-scale.md",
+   "title": "模型規模與預測力（Model Scale）",
+   "type": "concept",
+   "summary": "語言模型越大，讀新聞預測股價的能力是否越強",
+   "tags": [
+    "models",
+    "return-prediction"
+   ],
+   "aliases": [
+    "模型大小",
+    "參數量",
+    "emergent",
+    "湧現能力"
+   ],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading",
+    "domain-specific-pretraining",
+    "financial-sentiment-analysis"
+   ]
+  },
+  {
    "slug": "news-return-predictability",
    "path": "wiki/concepts/news-return-predictability.md",
    "title": "新聞與報酬可預測性（News-based Return Predictability）",
@@ -156,12 +191,14 @@
    ],
    "sources": [
     "2023-lopez-lira-chatgpt-forecast",
-    "2019-araci-finbert"
+    "2019-araci-finbert",
+    "2024-kirtac-sentiment-trading"
    ],
    "updated": "2026-11-23",
    "links": [
     "2019-araci-finbert",
     "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading",
     "long-short-sentiment-strategy",
     "look-ahead-bias",
     "market-efficiency",
@@ -186,11 +223,13 @@
     "衝擊成本"
    ],
    "sources": [
-    "2023-lopez-lira-chatgpt-forecast"
+    "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading"
    ],
    "updated": "2026-11-23",
    "links": [
     "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading",
     "long-short-sentiment-strategy"
    ]
   },
@@ -209,12 +248,14 @@
    "links": [
     "2019-araci-finbert",
     "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading",
     "domain-specific-pretraining",
     "financial-sentiment-analysis",
     "log",
     "long-short-sentiment-strategy",
     "look-ahead-bias",
     "market-efficiency",
+    "model-scale",
     "news-return-predictability",
     "overview",
     "transaction-costs"
@@ -306,6 +347,37 @@
    "url": "https://arxiv.org/abs/2304.07619",
    "raw": "raw/2023-lopez-lira-chatgpt-forecast.md",
    "tier": "B",
+   "kind": "paper"
+  },
+  {
+   "slug": "2024-kirtac-sentiment-trading",
+   "path": "wiki/sources/2024-kirtac-sentiment-trading.md",
+   "title": "Sentiment trading with large language models",
+   "type": "source",
+   "summary": "用報酬當標籤微調 OPT、BERT，比較 FinBERT 與詞典法，OPT 多空策略扣 10 bps 後 Sharpe 3.05",
+   "tags": [
+    "sentiment",
+    "trading-strategy",
+    "models"
+   ],
+   "aliases": [],
+   "sources": [],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading",
+    "domain-specific-pretraining",
+    "financial-sentiment-analysis",
+    "long-short-sentiment-strategy",
+    "model-scale",
+    "transaction-costs"
+   ],
+   "authors": "Kemal Kirtac, Guido Germano",
+   "year": "2024",
+   "venue": "Finance Research Letters 62, 105227",
+   "url": "https://doi.org/10.1016/j.frl.2024.105227",
+   "raw": "raw/2024-kirtac-sentiment-trading.md",
+   "tier": "A",
    "kind": "paper"
   }
  ]

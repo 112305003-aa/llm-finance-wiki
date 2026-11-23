@@ -4,7 +4,7 @@ type: concept
 summary: 讓電腦判斷一段金融文字是好消息、壞消息還是中性
 tags: [sentiment, models]
 aliases: [情緒分析, sentiment analysis, 新聞情緒]
-sources: [2019-araci-finbert, 2023-lopez-lira-chatgpt-forecast]
+sources: [2019-araci-finbert, 2023-lopez-lira-chatgpt-forecast, 2024-kirtac-sentiment-trading]
 updated: 2026-11-23
 ---
 
@@ -30,10 +30,12 @@ updated: 2026-11-23
 
 - **2023**｜GPT-4 直接讀標題，比 FinBERT 等小模型更能對應到股價漂移（[[2023-lopez-lira-chatgpt-forecast]] §7.1）。預印本。
 
+- **2024**｜在 965,375 篇新聞上，詞典法預測 3 日報酬方向的 accuracy 只有 0.501（幾乎等於丟銅板），OPT 是 0.744（[[2024-kirtac-sentiment-trading]] §Table 3）〔期間：2010–2023｜市場：美股｜成本：不適用（分類準確率）〕
+
 ## 常見誤解
 
 - ❌「情緒分類準確 = 能預測股價」→ ✅ FinBERT 只評估句子情緒有沒有標對，沒有測試能不能賺錢（[[2019-araci-finbert]] §5）。
 
 ## 相關頁面
 
-- [[domain-specific-pretraining]]、[[news-return-predictability]]
+- [[domain-specific-pretraining]]、[[news-return-predictability]]、[[model-scale]]

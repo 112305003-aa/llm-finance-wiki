@@ -22,3 +22,9 @@ updated: 2026-11-23
 - 修改：concepts/financial-sentiment-analysis（加第 3 代 LLM）、overview
 - 備註：讀 v6（142 頁）正文 §1–§9；與 FinBERT 沒有矛盾（FinBERT 只做分類，本篇測報酬）
 - lint 擋下 2 個 ERROR（定義句裡的 0.01% 被當成數據、關聯段落的 20 bps 沒附 §），已修正
+
+## [2026-11-23] ingest | Sentiment trading with large language models
+- 新增：raw/2024-kirtac-sentiment-trading.md、wiki/sources/2024-kirtac-sentiment-trading.md、wiki/concepts/model-scale.md
+- 修改：concepts/financial-sentiment-analysis、domain-specific-pretraining、long-short-sentiment-strategy、transaction-costs、news-return-predictability
+- 備註：A 級（Finance Research Letters）。**發現與 Lopez-Lira & Tang 矛盾**：BERT／FinBERT 能否預測報酬、扣 10 bps 後 Sharpe 差很多 → 標 ⚠️（未處理），依 AGENTS.md §5.2 停下來問使用者
+- lint 擋下 8 個 ERROR：分類準確率那幾行有「報酬」字樣，被判為績效數字 → 補上〔期間｜市場｜成本：不適用〕；多處關聯段落缺 §

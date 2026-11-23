@@ -4,7 +4,7 @@ type: concept
 summary: 把通用語言模型再用某個領域（如金融）的文字訓練一次
 tags: [models, data]
 aliases: [further pre-training, 金融領域預訓練]
-sources: [2019-araci-finbert]
+sources: [2019-araci-finbert, 2024-kirtac-sentiment-trading]
 updated: 2026-11-23
 ---
 
@@ -23,6 +23,8 @@ updated: 2026-11-23
 ## 發展脈絡
 
 - **2019**｜FinBERT：再預訓練的幫助很小，accuracy 只從 0.85 到 0.86（[[2019-araci-finbert]] §Table 4）。
+
+- **2024**｜FinBERT 預測 3 日報酬方向的 accuracy 0.722，略低於通用 BERT 的 0.725；作者推測專用模型可能過度擬合（[[2024-kirtac-sentiment-trading]] §Table 3、§3.2）〔期間：2010–2023｜市場：美股｜成本：不適用（分類準確率）〕
 
 ## 常見誤解
 

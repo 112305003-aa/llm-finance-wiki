@@ -4,7 +4,7 @@ type: concept
 summary: 新聞出來之後，股價會不會繼續往同一方向走，讓人有機會預測
 tags: [return-prediction, sentiment, market-efficiency]
 aliases: [可預測性, 隔日報酬, 漂移, post-news drift, 新聞漂移]
-sources: [2023-lopez-lira-chatgpt-forecast, 2019-araci-finbert]
+sources: [2023-lopez-lira-chatgpt-forecast, 2019-araci-finbert, 2024-kirtac-sentiment-trading]
 updated: 2026-11-23
 ---
 
@@ -29,6 +29,10 @@ updated: 2026-11-23
 
 - **2019**｜FinBERT 只做情緒分類，沒有測報酬（[[2019-araci-finbert]] §5）。
 - **2023**｜GPT-4 的分數能預測 1–2 天漂移，壞消息與小型股更明顯（[[2023-lopez-lira-chatgpt-forecast]] §6.1、§8.2）。預印本。
+
+- **2024**｜用報酬當標籤微調的 OPT，分數能顯著預測隔日報酬，係數 0.254（[[2024-kirtac-sentiment-trading]] §Table 4）〔期間：2010–2023｜市場：美股｜成本：不適用（迴歸）〕
+
+> ⚠️ **矛盾**（未處理）：BERT／FinBERT 的分數能不能預測報酬？Lopez-Lira & Tang 說不能，Sharpe 為負（[[2023-lopez-lira-chatgpt-forecast]] §7.1）；Kirtac & Germano 說能，Sharpe 超過 2（[[2024-kirtac-sentiment-trading]] §Table 5）〔期間：兩篇不同｜市場：美股｜成本：前者未扣、後者扣 10 bps〕
 
 ## 常見誤解
 

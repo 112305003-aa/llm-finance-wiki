@@ -4,7 +4,7 @@ type: concept
 summary: 手續費、稅、價差與衝擊成本；每天換股的策略特別怕它
 tags: [backtesting, trading-strategy]
 aliases: [交易成本, bps, 基點, 成本敏感度, 衝擊成本]
-sources: [2023-lopez-lira-chatgpt-forecast]
+sources: [2023-lopez-lira-chatgpt-forecast, 2024-kirtac-sentiment-trading]
 updated: 2026-11-23
 ---
 
@@ -23,6 +23,8 @@ updated: 2026-11-23
 ## 發展脈絡
 
 - **2023**｜作者結論：只有交易成本夠低的參與者（例如造市商）能利用（[[2023-lopez-lira-chatgpt-forecast]] §1）。
+
+- **2024**｜扣 10 bps 後，OPT 多空策略 2021-08 到 2023-07 的累積報酬 355%（[[2024-kirtac-sentiment-trading]] §3.3）〔期間：2021-08–2023-07｜市場：美股｜成本：扣 10 bps〕
 
 ## 常見誤解
 

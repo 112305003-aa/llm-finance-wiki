@@ -4,7 +4,7 @@ type: concept
 summary: 買進好消息股票、放空壞消息股票，用來檢驗情緒訊號有沒有用
 tags: [trading-strategy, sentiment, evaluation]
 aliases: [多空, long-short, 多空組合, Sharpe ratio, 夏普值]
-sources: [2023-lopez-lira-chatgpt-forecast]
+sources: [2023-lopez-lira-chatgpt-forecast, 2024-kirtac-sentiment-trading]
 updated: 2026-11-23
 ---
 
@@ -17,6 +17,7 @@ updated: 2026-11-23
 ## 怎麼運作
 
 - **建組合**：例如 GPT-4 score 為正買進、為負放空，等權、每日再平衡（[[2023-lopez-lira-chatgpt-forecast]] §6.2）。
+- **另一種建法**：取情緒分數最高 20% 做多、最低 20% 放空，市值加權（[[2024-kirtac-sentiment-trading]] §2.2）。
 - **進出場時點**：隔夜新聞在開盤進場、收盤出場（[[2023-lopez-lira-chatgpt-forecast]] §6.2）。
 - **Sharpe ratio（夏普值）**：平均超額報酬 ÷ 報酬波動，代表每承擔一單位風險換到多少報酬；年化後常拿來比較策略。
 
@@ -25,6 +26,10 @@ $$\text{Sharpe} = \frac{\bar r - r_f}{\sigma_r}$$
 ## 發展脈絡
 
 - **2023**｜GPT-4 隔夜新聞多空策略年化 Sharpe 2.97（[[2023-lopez-lira-chatgpt-forecast]] §Table 1）〔期間：2021-10–2024-05｜市場：美股｜成本：未扣〕
+
+- **2024**｜OPT 多空策略年化 Sharpe 3.05（[[2024-kirtac-sentiment-trading]] §Table 5）〔期間：未說明｜市場：美股｜成本：扣 10 bps〕
+
+> ⚠️ **矛盾**（未處理）：同樣扣 10 bps，GPT-4 策略的 Sharpe 只剩 1.29（[[2023-lopez-lira-chatgpt-forecast]] §6.2），OPT 策略卻有 3.05（[[2024-kirtac-sentiment-trading]] §Table 5）〔期間：兩篇不同｜市場：美股｜成本：扣 10 bps〕
 
 ## 常見誤解
 

@@ -223,7 +223,7 @@ TIERS = {"A", "B", "C"}
 KINDS = {"paper", "report", "oss", "news"}
 # 「數字」：帶單位（% bps 倍）、有小數點、或 ≥1000 的數量；年份、節號、slug 裡的數字不算
 UNIT_NUM = re.compile(r"\d[\d,]*(?:\.\d+)?\s*(?:%|％|bps|bp|個基點|倍)")
-DEC_NUM = re.compile(r"(?<![\w.§])\d+\.\d+(?![\w.])")
+DEC_NUM = re.compile(r"(?<![\w.§-])\d+\.\d+(?![\w.])")
 BIG_NUM = re.compile(r"(?<![\w.§,])\d{1,3}(?:,\d{3})+(?![\d,])|(?<![\w.§,])\d{4,}(?![\d,.])")
 PERF_RE = re.compile(r"Sharpe|夏普|報酬|return|alpha|α|勝率|年化|超額|累積|績效", re.I)
 COND_RE = re.compile(r"〔期間：[^｜〕]+｜市場：[^｜〕]+｜成本：[^〕]+〕")

@@ -29,6 +29,33 @@
    ]
   },
   {
+   "slug": "aggregate-market-prediction",
+   "path": "wiki/concepts/aggregate-market-prediction.md",
+   "title": "用新聞預測大盤與總經（Aggregate Market Prediction）",
+   "type": "concept",
+   "summary": "不預測個股，而是用整體新聞的好壞比例預測整個股市與景氣",
+   "tags": [
+    "return-prediction",
+    "macro"
+   ],
+   "aliases": [
+    "大盤預測",
+    "市場風險溢酬",
+    "總經",
+    "macro",
+    "好消息比例"
+   ],
+   "sources": [
+    "2025-chen-chatgpt-deepseek"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2025-chen-chatgpt-deepseek",
+    "market-efficiency",
+    "news-return-predictability"
+   ]
+  },
+  {
    "slug": "distraction-effect",
    "path": "wiki/concepts/distraction-effect.md",
    "title": "分心效應（Distraction Effect）",
@@ -164,12 +191,14 @@
    ],
    "sources": [
     "2023-lopez-lira-chatgpt-forecast",
-    "2023-glasserman-look-ahead-bias"
+    "2023-glasserman-look-ahead-bias",
+    "2025-chen-chatgpt-deepseek"
    ],
    "updated": "2026-11-23",
    "links": [
     "2023-glasserman-look-ahead-bias",
     "2023-lopez-lira-chatgpt-forecast",
+    "2025-chen-chatgpt-deepseek",
     "distraction-effect",
     "news-return-predictability"
    ]
@@ -193,12 +222,14 @@
    ],
    "sources": [
     "2023-lopez-lira-chatgpt-forecast",
-    "2019-araci-finbert"
+    "2019-araci-finbert",
+    "2025-chen-chatgpt-deepseek"
    ],
    "updated": "2026-11-23",
    "links": [
     "2019-araci-finbert",
     "2023-lopez-lira-chatgpt-forecast",
+    "2025-chen-chatgpt-deepseek",
     "news-return-predictability"
    ]
   },
@@ -220,12 +251,14 @@
    ],
    "sources": [
     "2023-lopez-lira-chatgpt-forecast",
-    "2024-kirtac-sentiment-trading"
+    "2024-kirtac-sentiment-trading",
+    "2025-chen-chatgpt-deepseek"
    ],
    "updated": "2026-11-23",
    "links": [
     "2023-lopez-lira-chatgpt-forecast",
     "2024-kirtac-sentiment-trading",
+    "2025-chen-chatgpt-deepseek",
     "domain-specific-pretraining",
     "financial-sentiment-analysis"
    ]
@@ -260,6 +293,7 @@
     "2023-glasserman-look-ahead-bias",
     "2023-lopez-lira-chatgpt-forecast",
     "2024-kirtac-sentiment-trading",
+    "aggregate-market-prediction",
     "long-short-sentiment-strategy",
     "look-ahead-bias",
     "market-efficiency",
@@ -312,6 +346,8 @@
     "2023-glasserman-look-ahead-bias",
     "2023-lopez-lira-chatgpt-forecast",
     "2024-kirtac-sentiment-trading",
+    "2025-chen-chatgpt-deepseek",
+    "aggregate-market-prediction",
     "distraction-effect",
     "domain-specific-pretraining",
     "financial-sentiment-analysis",
@@ -475,6 +511,36 @@
    "url": "https://doi.org/10.1016/j.frl.2024.105227",
    "raw": "raw/2024-kirtac-sentiment-trading.md",
    "tier": "A",
+   "kind": "paper"
+  },
+  {
+   "slug": "2025-chen-chatgpt-deepseek",
+   "path": "wiki/sources/2025-chen-chatgpt-deepseek.md",
+   "title": "ChatGPT and DeepSeek: Can They Predict the Stock Market and Macroeconomy?",
+   "type": "source",
+   "summary": "用 ChatGPT 判斷華爾街日報頭版標題的好壞，每月「好消息比例」能預測大盤與總經",
+   "tags": [
+    "return-prediction",
+    "macro",
+    "sentiment",
+    "models"
+   ],
+   "aliases": [],
+   "sources": [],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "aggregate-market-prediction",
+    "look-ahead-bias",
+    "market-efficiency",
+    "model-scale"
+   ],
+   "authors": "Jian Chen, Guohao Tang, Guofu Zhou, Wu Zhu",
+   "year": "2025",
+   "venue": "arXiv preprint（初稿 2023-07）",
+   "url": "https://arxiv.org/abs/2502.10008",
+   "raw": "raw/2025-chen-chatgpt-deepseek.md",
+   "tier": "B",
    "kind": "paper"
   }
  ]

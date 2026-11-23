@@ -40,3 +40,9 @@ updated: 2026-11-23
 - 修改：concepts/look-ahead-bias（解決原本的 ❓）、news-return-predictability、overview
 - 備註：與現有 wiki 沒有矛盾（樣本外沒有前瞻偏誤，與 Lopez-Lira 的做法一致）；發現論文內文與表 3 不一致，標 ❓
 - pre-commit hook 擋下 8 個 ERROR：拆成子項目的資料行沒各自附 §；另修正 lint 誤判（GPT-3.5 的 3.5 被當成數據，改為排除連字號後的數字）
+
+## [2026-11-23] ingest | ChatGPT and DeepSeek: Can They Predict the Stock Market and Macroeconomy?
+- 新增：raw/2025-chen-chatgpt-deepseek.md、wiki/sources/2025-chen-chatgpt-deepseek.md、wiki/concepts/aggregate-market-prediction.md
+- 修改：concepts/look-ahead-bias、model-scale、market-efficiency、news-return-predictability
+- 備註：**發現兩個矛盾**（好消息 vs 壞消息何者反應不足；樣本內使用 LLM 是否可接受）→ 標 ⚠️（未處理），停下來問使用者
+- hook 擋下 1 個 ERROR（❓ 待查那行的斜率沒附條件），已補

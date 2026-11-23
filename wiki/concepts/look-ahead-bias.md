@@ -4,7 +4,7 @@ type: concept
 summary: 回測時不小心用到「當時還不知道的資訊」，讓績效看起來比實際好
 tags: [bias, backtesting, evaluation]
 aliases: [前瞻偏誤, look-ahead, 前視偏誤, 記憶, memorization, 知識截止日]
-sources: [2023-lopez-lira-chatgpt-forecast, 2023-glasserman-look-ahead-bias]
+sources: [2023-lopez-lira-chatgpt-forecast, 2023-glasserman-look-ahead-bias, 2025-chen-chatgpt-deepseek]
 updated: 2026-11-23
 ---
 
@@ -25,6 +25,10 @@ updated: 2026-11-23
 
 - **2023**｜用截止日後的樣本處理（[[2023-lopez-lira-chatgpt-forecast]] §4）。
 - **2023**｜GPT-3.5 在樣本內「偷看答案」的好處，被分心效應的壞處蓋過，遮掉名稱反而更好（[[2023-glasserman-look-ahead-bias]] §3.2）。預印本。
+
+- **2025**｜另一篇認為在訓練期間內使用問題不大，因為語言意義穩定、2021-09 之後表現沒變差（[[2025-chen-chatgpt-deepseek]] §1）。預印本。
+
+> ⚠️ **矛盾**（未處理）：Lopez-Lira & Tang 認為必須用截止日後的樣本（[[2023-lopez-lira-chatgpt-forecast]] §4）；Chen 等人用 1996–2022 的樣本，認為問題不大（[[2025-chen-chatgpt-deepseek]] §1）。
 
 ## 常見誤解
 

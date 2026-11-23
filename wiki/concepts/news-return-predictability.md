@@ -42,4 +42,5 @@ updated: 2026-11-23
 
 ## 相關頁面
 
+- [[aggregate-market-prediction]]（大盤層次）
 - [[long-short-sentiment-strategy]]、[[transaction-costs]]、[[look-ahead-bias]]、[[market-efficiency]]

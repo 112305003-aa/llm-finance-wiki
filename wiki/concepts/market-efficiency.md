@@ -4,7 +4,7 @@ type: concept
 summary: 市場多快把新資訊反映進價格；LLM 普及可能讓它變快
 tags: [market-efficiency, return-prediction]
 aliases: [效率市場, 反應不足, underreaction, 資訊擴散, 套利限制]
-sources: [2023-lopez-lira-chatgpt-forecast, 2019-araci-finbert]
+sources: [2023-lopez-lira-chatgpt-forecast, 2019-araci-finbert, 2025-chen-chatgpt-deepseek]
 updated: 2026-11-23
 ---
 
@@ -22,6 +22,10 @@ updated: 2026-11-23
 ## 發展脈絡
 
 - **2023**｜GPT-4 策略的年化 Sharpe 逐年下降：2021Q4 6.54 → 2024 年 1–5 月 1.22（[[2023-lopez-lira-chatgpt-forecast]] §8.2）〔期間：2021Q4–2024-05｜市場：美股｜成本：未扣〕作者認為與 LLM 普及一致，但也可能是市場環境改變（§8.2）。
+
+- **2025**｜在大盤層次，好消息被慢慢消化、壞消息馬上反映（[[2025-chen-chatgpt-deepseek]] §4）。
+
+> ⚠️ **矛盾**（未處理）：個股層次是壞消息後漂移更明顯（[[2023-lopez-lira-chatgpt-forecast]] §6.1）；大盤層次卻是好消息才有預測力（[[2025-chen-chatgpt-deepseek]] §4）。
 
 ## 常見誤解
 

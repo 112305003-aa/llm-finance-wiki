@@ -4,7 +4,7 @@ type: concept
 summary: 語言模型越大，讀新聞預測股價的能力是否越強
 tags: [models, return-prediction]
 aliases: [模型大小, 參數量, emergent, 湧現能力]
-sources: [2023-lopez-lira-chatgpt-forecast, 2024-kirtac-sentiment-trading]
+sources: [2023-lopez-lira-chatgpt-forecast, 2024-kirtac-sentiment-trading, 2025-chen-chatgpt-deepseek]
 updated: 2026-11-23
 ---
 
@@ -23,6 +23,8 @@ updated: 2026-11-23
 
 - **2023**｜「門檻效應」：模型要夠大才有用（[[2023-lopez-lira-chatgpt-forecast]] §7.1）。預印本。
 - **2024**｜參數較多的 OPT 勝過 BERT 與 FinBERT（[[2024-kirtac-sentiment-trading]] §3.2）。
+
+- **2025**｜預測大盤時，ChatGPT 有用，BERT、詞典法與 DeepSeek 沒有；作者推測 DeepSeek 主要用中英文訓練（[[2025-chen-chatgpt-deepseek]] §6）。
 
 ## 常見誤解
 

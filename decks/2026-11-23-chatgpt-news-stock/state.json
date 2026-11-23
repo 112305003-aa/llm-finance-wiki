@@ -1,0 +1,22 @@
+{
+ "slug": "2026-11-23-chatgpt-news-stock",
+ "events": [
+  {
+   "time": "2026-11-23T12:34:49",
+   "node": "init",
+   "result": "DONE",
+   "detail": "建立 decks/2026-11-23-chatgpt-news-stock/，請填寫 brief.md 並由使用者確認"
+  },
+  {
+   "time": "2026-11-23T12:49:46",
+   "node": "👤 brief",
+   "result": "APPROVED",
+   "detail": "使用者確認"
+  }
+ ],
+ "approved": {
+  "brief": "2026-11-23T12:49:46"
+ },
+ "fail_counts": {},
+ "graph_rounds": 0
+}

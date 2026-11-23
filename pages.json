@@ -2,6 +2,53 @@
  "generated": "2026-11-23",
  "pages": [
   {
+   "slug": "domain-specific-pretraining",
+   "path": "wiki/concepts/domain-specific-pretraining.md",
+   "title": "領域再預訓練（Domain-specific Pre-training）",
+   "type": "concept",
+   "summary": "把通用語言模型再用某個領域（如金融）的文字訓練一次",
+   "tags": [
+    "models",
+    "data"
+   ],
+   "aliases": [
+    "further pre-training",
+    "金融領域預訓練"
+   ],
+   "sources": [
+    "2019-araci-finbert"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2019-araci-finbert",
+    "financial-sentiment-analysis"
+   ]
+  },
+  {
+   "slug": "financial-sentiment-analysis",
+   "path": "wiki/concepts/financial-sentiment-analysis.md",
+   "title": "金融情緒分析（Financial Sentiment Analysis）",
+   "type": "concept",
+   "summary": "讓電腦判斷一段金融文字是好消息、壞消息還是中性",
+   "tags": [
+    "sentiment",
+    "models"
+   ],
+   "aliases": [
+    "情緒分析",
+    "sentiment analysis",
+    "新聞情緒"
+   ],
+   "sources": [
+    "2019-araci-finbert"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2019-araci-finbert",
+    "domain-specific-pretraining"
+   ]
+  },
+  {
    "slug": "index",
    "path": "wiki/index.md",
    "title": "目錄",
@@ -14,6 +61,9 @@
    "sources": [],
    "updated": "2026-11-23",
    "links": [
+    "2019-araci-finbert",
+    "domain-specific-pretraining",
+    "financial-sentiment-analysis",
     "log",
     "overview"
    ]
@@ -45,8 +95,35 @@
    "sources": [],
    "updated": "2026-11-23",
    "links": [
+    "2019-araci-finbert",
+    "financial-sentiment-analysis",
     "index"
    ]
+  },
+  {
+   "slug": "2019-araci-finbert",
+   "path": "wiki/sources/2019-araci-finbert.md",
+   "title": "FinBERT: Financial Sentiment Analysis with Pre-trained Language Models",
+   "type": "source",
+   "summary": "把 BERT 再用金融新聞訓練，做成金融句子的正／負／中性分類器",
+   "tags": [
+    "sentiment",
+    "models"
+   ],
+   "aliases": [],
+   "sources": [],
+   "updated": "2026-11-23",
+   "links": [
+    "domain-specific-pretraining",
+    "financial-sentiment-analysis"
+   ],
+   "authors": "Dogu Tan Araci",
+   "year": "2019",
+   "venue": "arXiv preprint（University of Amsterdam 碩士論文）",
+   "url": "https://arxiv.org/abs/1908.10063",
+   "raw": "raw/2019-araci-finbert.md",
+   "tier": "B",
+   "kind": "paper"
   }
  ]
 }

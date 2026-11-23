@@ -25,7 +25,7 @@ updated: 2026-11-23
 
 - **2025**｜在大盤層次，好消息被慢慢消化、壞消息馬上反映（[[2025-chen-chatgpt-deepseek]] §4）。
 
-> ⚠️ **矛盾**（未處理）：個股層次是壞消息後漂移更明顯（[[2023-lopez-lira-chatgpt-forecast]] §6.1）；大盤層次卻是好消息才有預測力（[[2025-chen-chatgpt-deepseek]] §4）。
+> ⚠️ **矛盾**（已處理，見 [[stock-vs-market-news-asymmetry]]）：個股層次是壞消息後漂移更明顯（[[2023-lopez-lira-chatgpt-forecast]] §6.1）；大盤層次卻是好消息才有預測力（[[2025-chen-chatgpt-deepseek]] §4）。
 
 ## 常見誤解
 

@@ -2,6 +2,61 @@
  "generated": "2026-11-23",
  "pages": [
   {
+   "slug": "in-sample-vs-out-of-sample-llm-backtest",
+   "path": "wiki/comparisons/in-sample-vs-out-of-sample-llm-backtest.md",
+   "title": "樣本內 vs 樣本外：在 LLM 訓練期間內回測可不可以？",
+   "type": "comparison",
+   "summary": "本 wiki 以知識截止日之後的樣本外結果為標準，樣本內結果保留但加警語",
+   "tags": [
+    "backtesting",
+    "bias",
+    "evaluation"
+   ],
+   "aliases": [
+    "樣本內",
+    "樣本外",
+    "in-sample",
+    "out-of-sample",
+    "知識截止日"
+   ],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2025-chen-chatgpt-deepseek",
+    "2023-glasserman-look-ahead-bias"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-glasserman-look-ahead-bias",
+    "2023-lopez-lira-chatgpt-forecast",
+    "2025-chen-chatgpt-deepseek"
+   ]
+  },
+  {
+   "slug": "stock-vs-market-news-asymmetry",
+   "path": "wiki/comparisons/stock-vs-market-news-asymmetry.md",
+   "title": "個股 vs 大盤：好消息與壞消息，哪個被市場慢慢消化？",
+   "type": "comparison",
+   "summary": "個股層次是壞消息反應不足，大盤層次是好消息反應不足；兩篇研究的層次與頻率不同",
+   "tags": [
+    "market-efficiency",
+    "return-prediction"
+   ],
+   "aliases": [
+    "好消息 vs 壞消息",
+    "不對稱反應",
+    "asymmetric reaction"
+   ],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2025-chen-chatgpt-deepseek"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2025-chen-chatgpt-deepseek"
+   ]
+  },
+  {
    "slug": "zero-shot-vs-fine-tuned-sentiment",
    "path": "wiki/comparisons/zero-shot-vs-fine-tuned-sentiment.md",
    "title": "直接問 vs 用報酬微調：兩篇論文的情緒交易結果為何打架",
@@ -51,6 +106,7 @@
    "updated": "2026-11-23",
    "links": [
     "2025-chen-chatgpt-deepseek",
+    "in-sample-vs-out-of-sample-llm-backtest",
     "market-efficiency",
     "news-return-predictability"
    ]
@@ -200,6 +256,7 @@
     "2023-lopez-lira-chatgpt-forecast",
     "2025-chen-chatgpt-deepseek",
     "distraction-effect",
+    "in-sample-vs-out-of-sample-llm-backtest",
     "news-return-predictability"
    ]
   },
@@ -230,7 +287,8 @@
     "2019-araci-finbert",
     "2023-lopez-lira-chatgpt-forecast",
     "2025-chen-chatgpt-deepseek",
-    "news-return-predictability"
+    "news-return-predictability",
+    "stock-vs-market-news-asymmetry"
    ]
   },
   {
@@ -351,6 +409,7 @@
     "distraction-effect",
     "domain-specific-pretraining",
     "financial-sentiment-analysis",
+    "in-sample-vs-out-of-sample-llm-backtest",
     "log",
     "long-short-sentiment-strategy",
     "look-ahead-bias",
@@ -358,6 +417,7 @@
     "model-scale",
     "news-return-predictability",
     "overview",
+    "stock-vs-market-news-asymmetry",
     "transaction-costs",
     "zero-shot-vs-fine-tuned-sentiment"
    ]
@@ -393,8 +453,11 @@
     "2023-glasserman-look-ahead-bias",
     "2023-lopez-lira-chatgpt-forecast",
     "2024-kirtac-sentiment-trading",
+    "2025-chen-chatgpt-deepseek",
     "financial-sentiment-analysis",
+    "in-sample-vs-out-of-sample-llm-backtest",
     "index",
+    "stock-vs-market-news-asymmetry",
     "zero-shot-vs-fine-tuned-sentiment"
    ]
   },
@@ -531,9 +594,11 @@
    "links": [
     "2023-lopez-lira-chatgpt-forecast",
     "aggregate-market-prediction",
+    "in-sample-vs-out-of-sample-llm-backtest",
     "look-ahead-bias",
     "market-efficiency",
-    "model-scale"
+    "model-scale",
+    "stock-vs-market-news-asymmetry"
    ],
    "authors": "Jian Chen, Guohao Tang, Guofu Zhou, Wu Zhu",
    "year": "2025",

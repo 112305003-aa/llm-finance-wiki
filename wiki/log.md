@@ -46,3 +46,8 @@ updated: 2026-11-23
 - 修改：concepts/look-ahead-bias、model-scale、market-efficiency、news-return-predictability
 - 備註：**發現兩個矛盾**（好消息 vs 壞消息何者反應不足；樣本內使用 LLM 是否可接受）→ 標 ⚠️（未處理），停下來問使用者
 - hook 擋下 1 個 ERROR（❓ 待查那行的斜率沒附條件），已補
+
+## [2026-11-23] edit | 處理兩個矛盾（好壞消息不對稱、樣本內回測）
+- 新增：wiki/comparisons/stock-vs-market-news-asymmetry.md、wiki/comparisons/in-sample-vs-out-of-sample-llm-backtest.md
+- 修改：四處 ⚠️ 改為「已處理」；Chen 等人的來源頁與概念頁加上「樣本內」警語；overview 加第 5 點與證據標準
+- 備註：使用者決定「並陳，說明是不同層次」與「以樣本外為標準，樣本內加警語」

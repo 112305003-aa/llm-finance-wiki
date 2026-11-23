@@ -26,7 +26,7 @@ $$R_{t+h} = \alpha + \beta\, NR^K_t + \varepsilon_{t+h},\quad K = B \text{ 或 }
 
 ## 發展脈絡
 
-- **2025**｜ChatGPT 的好消息比例能預測未來 1–6 個月的大盤，12 個月的 $R^2$ 是 8.52%（[[2025-chen-chatgpt-deepseek]] §Table 2）〔期間：1996-01–2022-12｜市場：美股 S&P 500｜成本：不適用（迴歸）〕預印本。
+- **2025**｜ChatGPT 的好消息比例能預測未來 1–6 個月的大盤，12 個月的 $R^2$ 是 8.52%（[[2025-chen-chatgpt-deepseek]] §Table 2）〔期間：1996-01–2022-12｜市場：美股 S&P 500｜成本：不適用（迴歸）〕預印本，且屬樣本內結果，見 [[in-sample-vs-out-of-sample-llm-backtest]]。
 
 ## 常見誤解
 

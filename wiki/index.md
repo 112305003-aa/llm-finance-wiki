@@ -8,7 +8,7 @@ updated: 2026-11-23
 
 > 本頁由 `python3 tools/wiki.py build` 自動產生，請勿手動編輯。
 
-共 13 頁。
+共 14 頁。
 
 ## 總覽（1）
 
@@ -24,6 +24,10 @@ updated: 2026-11-23
 - [[model-scale|模型規模與預測力（Model Scale）]] — 語言模型越大，讀新聞預測股價的能力是否越強
 - [[news-return-predictability|新聞與報酬可預測性（News-based Return Predictability）]] — 新聞出來之後，股價會不會繼續往同一方向走，讓人有機會預測
 - [[transaction-costs|交易成本（Transaction Costs）]] — 手續費、稅、價差與衝擊成本；每天換股的策略特別怕它
+
+## 比較與綜合（1）
+
+- [[zero-shot-vs-fine-tuned-sentiment|直接問 vs 用報酬微調：兩篇論文的情緒交易結果為何打架]] — Lopez-Lira & Tang 與 Kirtac & Germano 對 BERT／FinBERT 能否交易得出相反結論，差在方法與樣本切分
 
 ## 來源（3）
 

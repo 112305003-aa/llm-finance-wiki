@@ -13,6 +13,7 @@ updated: 2026-11-23
 1. **讓電腦判斷金融新聞的好壞，在 LLM 之前就做得不錯**：FinBERT 用少量標註句子就能分類金融句子情緒（[[2019-araci-finbert]] §5）。但「分類準」不等於「能預測股價」（[[financial-sentiment-analysis]]）。
 
 2. **GPT-4 讀標題，能預測新聞後 1–2 天的漂移**，壞消息、小型股更明顯；但扣掉 20 bps 來回成本就不賺錢，而且隨 LLM 普及逐年變弱（[[2023-lopez-lira-chatgpt-forecast]] §6.2、§8.2）。這是預印本（B 級）的結果。
+3. **期刊論文（A 級）報告更樂觀的數字**：用報酬當標籤微調的 OPT，扣 10 bps 後多空 Sharpe 3.05（[[2024-kirtac-sentiment-trading]] §Table 5）〔期間：未說明｜市場：美股｜成本：扣 10 bps〕。但它和 2. 的方法、切分方式不同，兩者並陳，見 [[zero-shot-vs-fine-tuned-sentiment]]。
 
 ## 從哪裡開始讀
 

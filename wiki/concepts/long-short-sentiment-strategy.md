@@ -29,7 +29,7 @@ $$\text{Sharpe} = \frac{\bar r - r_f}{\sigma_r}$$
 
 - **2024**｜OPT 多空策略年化 Sharpe 3.05（[[2024-kirtac-sentiment-trading]] §Table 5）〔期間：未說明｜市場：美股｜成本：扣 10 bps〕
 
-> ⚠️ **矛盾**（未處理）：同樣扣 10 bps，GPT-4 策略的 Sharpe 只剩 1.29（[[2023-lopez-lira-chatgpt-forecast]] §6.2），OPT 策略卻有 3.05（[[2024-kirtac-sentiment-trading]] §Table 5）〔期間：兩篇不同｜市場：美股｜成本：扣 10 bps〕
+> ⚠️ **矛盾**（已處理，見 [[zero-shot-vs-fine-tuned-sentiment]]）：同樣扣 10 bps，GPT-4 策略的 Sharpe 只剩 1.29（[[2023-lopez-lira-chatgpt-forecast]] §6.2），OPT 策略卻有 3.05（[[2024-kirtac-sentiment-trading]] §Table 5）〔期間：兩篇不同｜市場：美股｜成本：扣 10 bps〕
 
 ## 常見誤解
 

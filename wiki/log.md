@@ -28,3 +28,8 @@ updated: 2026-11-23
 - 修改：concepts/financial-sentiment-analysis、domain-specific-pretraining、long-short-sentiment-strategy、transaction-costs、news-return-predictability
 - 備註：A 級（Finance Research Letters）。**發現與 Lopez-Lira & Tang 矛盾**：BERT／FinBERT 能否預測報酬、扣 10 bps 後 Sharpe 差很多 → 標 ⚠️（未處理），依 AGENTS.md §5.2 停下來問使用者
 - lint 擋下 8 個 ERROR：分類準確率那幾行有「報酬」字樣，被判為績效數字 → 補上〔期間｜市場｜成本：不適用〕；多處關聯段落缺 §
+
+## [2026-11-23] edit | 處理矛盾：Lopez-Lira & Tang vs Kirtac & Germano
+- 新增：wiki/comparisons/zero-shot-vs-fine-tuned-sentiment.md
+- 修改：三處 ⚠️ 改為「已處理」、overview 加第 3 點
+- 備註：使用者決定「並陳＋點出條件差異」，簡報用作教學例子

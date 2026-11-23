@@ -54,7 +54,7 @@ updated: 2026-11-23
 - Sharpe 3.05 的計算期間在表 5 沒有寫清楚（§Table 5、§4）〔期間：未說明｜市場：美股｜成本：扣 10 bps〕
 - 與 Lopez-Lira & Tang 的結果互相衝突，見下方 ⚠️。
 
-> ⚠️ **矛盾**（未處理）：Lopez-Lira & Tang 發現 FinBERT 與 BERT 的分數預測不了新聞後的漂移，Sharpe 為負（[[2023-lopez-lira-chatgpt-forecast]] §7.1）；本篇卻發現 FinBERT、BERT 多空策略扣 10 bps 後 Sharpe 都超過 2（[[2024-kirtac-sentiment-trading]] §Table 5）〔期間：兩篇不同｜市場：美股｜成本：前者未扣、後者扣 10 bps〕
+> ⚠️ **矛盾**（已處理，見 [[zero-shot-vs-fine-tuned-sentiment]]）：Lopez-Lira & Tang 發現 FinBERT 與 BERT 的分數預測不了新聞後的漂移，Sharpe 為負（[[2023-lopez-lira-chatgpt-forecast]] §7.1）；本篇卻發現 FinBERT、BERT 多空策略扣 10 bps 後 Sharpe 都超過 2（[[2024-kirtac-sentiment-trading]] §Table 5）〔期間：兩篇不同｜市場：美股｜成本：前者未扣、後者扣 10 bps〕
 
 ## 和本 wiki 其他頁的關係
 
@@ -63,3 +63,4 @@ updated: 2026-11-23
 - [[transaction-costs]]：扣 10 bps 的結果（§Table 5）。
 - [[domain-specific-pretraining]]：FinBERT 沒贏過 BERT。
 - [[model-scale]]：參數越多，預測越準。
+- [[zero-shot-vs-fine-tuned-sentiment]]：與 Lopez-Lira & Tang 的矛盾與處理。

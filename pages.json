@@ -2,6 +2,33 @@
  "generated": "2026-11-23",
  "pages": [
   {
+   "slug": "zero-shot-vs-fine-tuned-sentiment",
+   "path": "wiki/comparisons/zero-shot-vs-fine-tuned-sentiment.md",
+   "title": "直接問 vs 用報酬微調：兩篇論文的情緒交易結果為何打架",
+   "type": "comparison",
+   "summary": "Lopez-Lira & Tang 與 Kirtac & Germano 對 BERT／FinBERT 能否交易得出相反結論，差在方法與樣本切分",
+   "tags": [
+    "sentiment",
+    "trading-strategy",
+    "backtesting",
+    "evaluation"
+   ],
+   "aliases": [
+    "Lopez-Lira vs Kirtac",
+    "零樣本 vs 微調",
+    "zero-shot vs fine-tuned"
+   ],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading"
+   ]
+  },
+  {
    "slug": "domain-specific-pretraining",
    "path": "wiki/concepts/domain-specific-pretraining.md",
    "title": "領域再預訓練（Domain-specific Pre-training）",
@@ -84,7 +111,8 @@
     "2023-lopez-lira-chatgpt-forecast",
     "2024-kirtac-sentiment-trading",
     "news-return-predictability",
-    "transaction-costs"
+    "transaction-costs",
+    "zero-shot-vs-fine-tuned-sentiment"
    ]
   },
   {
@@ -202,7 +230,8 @@
     "long-short-sentiment-strategy",
     "look-ahead-bias",
     "market-efficiency",
-    "transaction-costs"
+    "transaction-costs",
+    "zero-shot-vs-fine-tuned-sentiment"
    ]
   },
   {
@@ -258,7 +287,8 @@
     "model-scale",
     "news-return-predictability",
     "overview",
-    "transaction-costs"
+    "transaction-costs",
+    "zero-shot-vs-fine-tuned-sentiment"
    ]
   },
   {
@@ -290,8 +320,10 @@
    "links": [
     "2019-araci-finbert",
     "2023-lopez-lira-chatgpt-forecast",
+    "2024-kirtac-sentiment-trading",
     "financial-sentiment-analysis",
-    "index"
+    "index",
+    "zero-shot-vs-fine-tuned-sentiment"
    ]
   },
   {
@@ -370,7 +402,8 @@
     "financial-sentiment-analysis",
     "long-short-sentiment-strategy",
     "model-scale",
-    "transaction-costs"
+    "transaction-costs",
+    "zero-shot-vs-fine-tuned-sentiment"
    ],
    "authors": "Kemal Kirtac, Guido Germano",
    "year": "2024",

@@ -57,3 +57,9 @@ updated: 2026-11-23
 - 修改：concepts/look-ahead-bias、distraction-effect、overview
 - 備註：與現有 wiki 沒有矛盾（任務不同：看數字預測，不是讀新聞）；依使用者先前的決定，在樣本內結果加上警語；比賽場數前後不一致，標 ❓
 - hook 擋下 1 個 ERROR（方法描述有「報酬」字樣與樣本數，被判為績效行）→ 補條件
+
+## [2026-11-23] deck | ChatGPT 看新聞能預測股價嗎？（graph 實跑）
+- 產出：decks/2026-11-23-chatgpt-news-stock/（index.html、report.md、state.json、cards/、outline.md、drafts/、reviews/、shots/）
+- 關卡：G1、G2、G3、G4a、G5 PASS；G4b 經 3 輪新對話 AI 審查後由使用者人工放行（第 3 輪剩 5 頁小問題列為已知問題）
+- 人工決策點：brief 確認、大綱確認 ×2（第 8 頁回 N3 改大綱）、STOP 後授權多一輪 ×2、G4b 人工放行
+- 工具修正：G5 加上「依據行換行」檢查；渲染器改為同來源章節合併；修正 override 理由解析 bug

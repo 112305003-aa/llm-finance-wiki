@@ -303,7 +303,13 @@ N5 渲染 HTML（腳本）─▶ G5 渲染檢查（Playwright 截圖）──不
 | 素材下限 | 相關 wiki 頁 < 3 | 在 G1 停止 |
 | 人工確認點 | brief、outline | 沒確認就不能往下 |
 
-`tools/deck.py` 會把每次執行的結果寫進 `state.json`，並負責計算輪數。超過上限時，腳本直接拒絕執行，並提示要找使用者。
+`tools/deck.py` 會把每次執行的結果寫進 `state.json`，並負責計算輪數。超過上限時，腳本記一筆 STOP，並提示要找使用者。
+
+使用者決定後，用 `override` 記錄（只有使用者可以決定，AI 不能自己執行）：
+- `extend`：再給一輪。
+- `pass <節點>`：人工放行。
+
+這兩種決定都會寫進 `state.json` 與 `report.md`。
 
 ### 6.4 AI 審查（G4b）怎麼做
 
@@ -346,6 +352,8 @@ python3 tools/deck.py render <slug>         # N5
 python3 tools/deck.py check-render <slug>   # G5
 python3 tools/deck.py report <slug>         # 交件
 python3 tools/deck.py status <slug>         # 現在卡在哪個節點
+python3 tools/deck.py override <slug> extend <理由>       # 👤 使用者授權多一輪
+python3 tools/deck.py override <slug> pass <節點> <理由>  # 👤 使用者人工放行
 ```
 
 ---

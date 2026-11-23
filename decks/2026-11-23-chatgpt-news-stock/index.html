@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 由 tools/deck.py render 從 drafts/ 產生，請勿手改（AGENTS.md §6） -->
+  <title>ChatGPT 看新聞能預測股價嗎？｜LLM × 金融 Wiki</title>
+  <link rel="stylesheet" href="../../assets/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="../_theme/deck.css">
+</head>
+<body>
+  <main class="deck" data-slug="2026-11-23-chatgpt-news-stock">
+<section class="slide cover" data-claims="">
+<h1>ChatGPT 看新聞能預測股價嗎？</h1>
+<p class="subtitle">讀了 6 篇論文之後的答案：可以，但沒有你想的那麼好賺</p>
+<div class="meta"><p>LLM × 金融 Wiki｜教學簡報｜2026-11-23</p></div>
+
+<aside class="notes"><p>今天想回答一個很多人好奇的問題：把新聞丟給 ChatGPT，問它這是好消息還是壞消息，能不能拿來預測股價？我把 6 篇論文整理進一個 wiki，這份簡報的每一句話都能追溯到 wiki 裡的頁面與論文章節。先講結論：可以，但有很多但書。</p></aside>
+</section>
+<section class="slide layout-bullets" data-claims="fb-1,fb-2,fb-3,fb-4">
+<h2>讓電腦讀新聞：從數字詞到 FinBERT</h2>
+<p class="lead">電腦判斷「這則新聞是好是壞」不是新鮮事，但判斷得準，不代表能預測股價。</p>
+<div class="body"><ul>
+<li><strong>詞典法</strong>：數一數正面詞、負面詞 → 看不懂整句意思</li>
+<li><strong>FinBERT</strong>：BERT 再用金融文字訓練，判斷句子正面／負面／中性</li>
+<li>金融句子分類 accuracy：FinBERT 0.86，舊方法 LSTM 0.71</li>
+<li>⚠️ 只測「情緒有沒有標對」，<strong>沒有測能不能預測股價</strong></li>
+</ul></div>
+<div class="src">依據：Araci 2019 §1、§3.2、§Table 2、§5</div>
+<aside class="notes"><p>「情緒分析」就是讓電腦判斷一段文字是正面還是負面。最早的做法是查字典，看到 loss、decline 這類字就扣分，但它看不懂整句的意思。2019 年的 FinBERT 是把語言模型 BERT 再拿金融文字訓練，分類準確率（accuracy，猜對的比例）到 0.86。但這篇論文只檢查情緒標得對不對，沒有拿去預測股價。今天的問題是：大型語言模型（LLM，像 ChatGPT 這樣讀過大量文字、能用對話回答問題的 AI）能不能更進一步？</p></aside>
+</section>
+<section class="slide layout-bullets" data-claims="lt-1,lt-2,lt-3">
+<h2>實驗怎麼做：只問 GPT-4 一個問題</h2>
+<p class="lead">研究者把每一則公司新聞標題丟給 GPT-4，問它「這對股價是好還是壞？」，再看股價後來怎麼走。</p>
+<div class="body"><ul>
+<li><strong>問法</strong>：「假裝你是金融專家……這則標題對這家公司股價是好是壞？」</li>
+<li><strong>答案變分數</strong>：YES → 1、UNKNOWN → 0、NO → −1</li>
+<li><strong>資料</strong>：美股，2021-10 到 2024-05，159,137 筆新聞</li>
+<li><strong>為什麼從 2021-10 開始？</strong> GPT-4 的訓練資料只到 2021-09 → 確保它沒看過這些新聞（<strong>樣本外</strong>）</li>
+</ul></div>
+<div class="src">依據：Lopez-Lira 2023 §4、§5</div>
+<aside class="notes"><p>這是 Lopez-Lira 和 Tang 的研究，也是今天的主角；它目前還是預印本，也就是還沒正式刊登在期刊上。做法是請模型扮演金融專家，只回答好、壞或不確定，再把答案換成分數。重點在時間：GPT-4 只讀過 2021 年 9 月以前的資料，所以研究只用之後的新聞，這叫「樣本外」，就像考試只考它沒看過的題目。為什麼這很重要，第 7 頁會再回來談。</p></aside>
+</section>
+<section class="slide layout-bullets" data-claims="lt-4,lt-5,lt-11">
+<h2>結果一：當下反應抓很準，之後的漂移弱很多</h2>
+<p class="lead">GPT-4 很會猜「新聞一出來股價往哪跳」，但那一下你來不及買；能交易、能預測的只有之後幾天的小幅延續。</p>
+<div class="body"><ul>
+<li><strong>初始反應</strong>：新聞出來那一刻的跳動 → 隔夜新聞日命中率 93.3%（來不及交易）</li>
+<li><strong>漂移（drift）</strong>：之後股價繼續往同方向走 → 隔夜新聞日命中率只有 58%</li>
+<li>資訊約兩天被吸收：第 1 天 34 bps、第 2 天 19 bps，之後就不顯著</li>
+<li>bps（基點）＝萬分之一，是論文常用的報酬與成本單位</li>
+</ul>
+<p><em>條件：美股、2021-10–2024-05、隔夜新聞、未扣交易成本</em></p></div>
+<div class="src">依據：Lopez-Lira 2023 §6.1、§8.1</div>
+<aside class="notes"><p>這頁是整份簡報最重要的觀念。新聞出來的瞬間股價會跳，GPT-4 猜這一跳的方向非常準。但那一跳發生時你還沒下單。真正能交易的是之後的「漂移」：市場沒有一次消化完，股價繼續慢慢走。這部分 GPT-4 的日命中率只有 58%，而且兩天後就不顯著了。所以看到「九成準」這種說法時，要先問：它預測的是哪一段？</p></aside>
+</section>
+<section class="slide layout-table" data-claims="lt-6,lt-7,lt-8,lt-12">
+<h2>結果二：真的能賺嗎？看成本</h2>
+<p class="lead">每天買進好消息的股票、同時押壞消息的股票會跌，帳面上很好看；但只要買賣的手續費等成本高一點，獲利就不見了。</p>
+<div class="body"><table>
+<thead>
+<tr>
+<th>情境（美股、2021-10–2024-05）</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不扣成本</td>
+<td>每日平均 0.34%，年化 Sharpe 2.97</td>
+</tr>
+<tr>
+<td>每次來回成本 5 bps</td>
+<td>累積報酬仍超過 300%</td>
+</tr>
+<tr>
+<td>10 bps</td>
+<td>仍高於 100%</td>
+</tr>
+<tr>
+<td>20 bps</td>
+<td><strong>不賺錢</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>壞消息比好消息有用：空方每日 26 bps、多方 8 bps（未扣成本）</li>
+<li>作者結論：只有成本極低的參與者（例如造市商）能利用</li>
+</ul></div>
+<div class="src">依據：Lopez-Lira 2023 §Table 1、§6.1、§6.2、§1</div>
+<aside class="notes"><p>這個策略叫「多空」：每天買進好消息的股票，同時放空壞消息的股票。放空就是先借股票來賣，等跌了再買回來還，賺中間的價差。Sharpe ratio（夏普值）是每承擔一單位風險換到多少報酬，數字越高代表越划算。2.97 是不扣成本的結果；把買賣時要付的手續費等交易成本算進去，到每次來回 20 bps，策略就不賺錢了。大部分的錢來自放空壞消息的股票。所以作者說，只有像造市商這種交易成本極低、專門在市場上提供買賣報價的機構才用得上。</p></aside>
+</section>
+<section class="slide layout-table" data-claims="lt-9,kg-3,kg-4,kg-5">
+<h2>兩篇論文打架：BERT、FinBERT 到底行不行？</h2>
+<p class="lead">同一個問題，兩篇論文給出相反答案；不是誰算錯，而是做法不同。看數字之前，先看條件。</p>
+<div class="body"><table>
+<thead>
+<tr>
+<th></th>
+<th>Lopez-Lira &amp; Tang（B 級預印本；美股 2021-10–2024-05）</th>
+<th>Kirtac &amp; Germano（A 級期刊；美股，期間未說明）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>怎麼用模型</td>
+<td>直接問</td>
+<td>用「之後 3 天報酬」當答案訓練</td>
+</tr>
+<tr>
+<td>怎麼測試</td>
+<td>樣本外</td>
+<td>隨機切分（不依時間）</td>
+</tr>
+<tr>
+<td>BERT 結果</td>
+<td>Sharpe 為負（未扣成本）</td>
+<td>Sharpe 2.11（扣 10 bps）</td>
+</tr>
+<tr>
+<td>較好的模型</td>
+<td>GPT-3.5：Sharpe 1.66（未扣成本）</td>
+<td>OPT：Sharpe 3.05（扣 10 bps）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Lopez-Lira：<strong>模型越大越好</strong>；Kirtac：OPT 最好，舊的詞典法 accuracy 只有 0.501（≈ 丟銅板）</li>
+</ul></div>
+<div class="src">依據：Lopez-Lira 2023 §7.1；Kirtac 2024 §Table 3、§Table 5；比較頁「直接問 vs 用報酬微調」 §使用者的決定</div>
+<aside class="notes"><p>這是我在整理 wiki 時遇到的矛盾。右邊這篇刊在期刊上，數字更漂亮，用的 OPT 是一種類似 GPT-3、2.7B 參數的模型。但它是拿「之後漲或跌」當答案去訓練模型，測試資料也是隨機切分，不是依時間先後；Sharpe 的計算期間也沒寫清楚。左邊則是直接問模型，而且只測它沒看過的期間。所以我們不判誰對，而是讓大家看到：方法不同，答案就可能相反。另外，Lopez-Lira 發現模型越大效果越好；Kirtac 則發現 OPT 最好、詞典法幾乎沒用。</p></aside>
+</section>
+<section class="slide layout-bullets" data-claims="lt-3,gl-1,gl-2,gl-3,gl-4,gl-5">
+<h2>會不會是 ChatGPT 早就「看過答案」？</h2>
+<p class="lead">ChatGPT 讀過網路上很多舊新聞；拿舊新聞考它，它可能是在背答案。研究者想了一個辦法檢查。</p>
+<div class="body"><ul>
+<li><strong>前瞻偏誤（look-ahead bias）</strong>：模型已經知道這則新聞之後股價怎麼走</li>
+<li><strong>分心效應（distraction effect）</strong>：模型對公司的印象干擾它讀這則新聞</li>
+<li>實驗：把公司名稱換成 <strong>Blahblahblah</strong>，再問一次 GPT-3.5</li>
+<li>結果：遮掉名稱反而賺更多，網路收集的標題組多空日報酬從 25.08 升到 30.97 bps</li>
+<li>結論：分心比偷看更傷；樣本外沒有偷看問題，但<strong>分心還在</strong></li>
+</ul>
+<p><em>條件：美股、2015-01–2021-09（樣本內）、未扣交易成本</em></p></div>
+<div class="src">依據：Lopez-Lira 2023 §4；Glasserman 2023 §1.1、§2.4、§Table 3、§3.2、§4</div>
+<aside class="notes"><p>第 3 頁提到樣本從 2021 年 10 月開始，就是為了避免前瞻偏誤。Glasserman 和 Lin 做了一個很聰明的實驗：把標題裡的公司名字遮掉。如果模型靠的是背答案，遮掉之後應該變差；結果反而變好。這代表模型對公司的既有印象會干擾它讀這則新聞，大公司尤其明顯。這叫分心效應，而且在樣本外也不會消失。</p></aside>
+</section>
+<section class="slide layout-bullets" data-claims="cd-1,cd-2,cd-3,cd-4,cd-6">
+<h2>延伸：能不能預測整個大盤？</h2>
+<p class="lead">不看單一公司，改看整份報紙：ChatGPT 判斷華爾街日報頭版的好消息比例，可以預測接下來幾個月的大盤。</p>
+<div class="body"><ul>
+<li>每月數一數頭版標題裡有多少「好消息」（1996-01 到 2022-12）</li>
+<li>好消息比例 → 預測未來大盤：下個月 $R^2$ 1.37%，12 個月升到 8.52%</li>
+<li>壞消息只和當月報酬有關，預測不了未來</li>
+<li>另一個大型語言模型 DeepSeek，以及 BERT、詞典法，都預測不了大盤</li>
+<li>⚠️ <strong>樣本內</strong>結果：期間多在 ChatGPT 的訓練範圍內，要打折看</li>
+</ul>
+<p><em>條件：美股 S&amp;P 500、1996-01–2022-12、迴歸結果（不涉及交易成本）</em></p></div>
+<div class="src">依據：Chen 2025 §3、§1、§4；比較頁「樣本內 vs 樣本外」 §使用者的決定</div>
+<aside class="notes"><p>這是另一組作者的研究，主題從個股換成整個股市。$R^2$ 是解釋力，代表這個訊號能解釋未來大盤變動的比例：從預測下個月的 1.37%，升到預測 12 個月的 8.52%。有趣的是，在大盤層次是好消息比較有預測力，和前面個股層次相反，兩者是不同層次的結果。最重要的是：這些新聞大多在 ChatGPT 讀過的期間內，屬於樣本內，所以本 wiki 會加上警語。</p></aside>
+</section>
+<section class="slide layout-bullets" data-claims="lt-5,lt-8,lt-10,kg-5,gl-5,cd-6">
+<h2>結論：可以，但……</h2>
+<p class="lead">研究（多為預印本）顯示，ChatGPT 讀新聞有一點預測力；但能賺錢的空間很小，而且近年在變小。</p>
+<div class="body"><ul>
+<li>✅ <strong>有一點預測力</strong>：能預測新聞後的漂移，但隔夜新聞日命中率只有 58%</li>
+<li>💸 <strong>很難賺</strong>：每次來回成本 20 bps 就不賺錢</li>
+<li>📉 <strong>近年變弱</strong>：年化 Sharpe 從 6.54（2021Q4）降到 1.22（2024 年 1–5 月）</li>
+<li>🔍 <strong>先看條件</strong>：方法、測試方式不同，結論就可能相反；以樣本外為準</li>
+<li>🧠 <strong>模型會分心</strong>：樣本外沒有偷看問題，但對公司的印象仍會干擾判斷</li>
+</ul>
+<p><em>條件：美股、2021-10–2024-05（Sharpe 為 2021Q4–2024-05）、Sharpe 與命中率未扣成本</em></p></div>
+<div class="src">依據：Lopez-Lira 2023 §6.1、§6.2、§8.2；比較頁「直接問 vs 用報酬微調」 §使用者的決定；Glasserman 2023 §4；比較頁「樣本內 vs 樣本外」 §使用者的決定</div>
+<aside class="notes"><p>總結五點。第一，預印本研究顯示 GPT-4 對新聞有一點預測力，但能交易的只有那一小段漂移。第二，交易成本會吃掉大部分獲利。第三，這個策略的 Sharpe 逐年下降；作者認為這和越來越多人使用 LLM 一致，但也承認可能只是市場環境改變，所以只能說「近年變弱」。第四，論文數字會打架，要先看條件，本 wiki 以樣本外為準。第五，模型的既有印象會干擾判斷，即使在樣本外也一樣。</p></aside>
+</section>
+<section class="slide layout-refs" data-claims="">
+<h2>參考資料</h2>
+<p class="lead">這份簡報的所有內容都來自 LLM × 金融 Wiki，每一頁底部標了依據的論文與章節。</p>
+<div class="body"><table>
+<thead>
+<tr>
+<th>等級</th>
+<th>來源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>Araci (2019) FinBERT — arXiv:1908.10063</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Lopez-Lira &amp; Tang, Can ChatGPT Forecast Stock Price Movements? — arXiv:2304.07619 v6</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Kirtac &amp; Germano (2024), Finance Research Letters 62 — arXiv:2412.19245</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Glasserman &amp; Lin (2023), Look-Ahead Bias — arXiv:2309.17322</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Chen, Tang, Zhou &amp; Zhu (2025), ChatGPT and DeepSeek — arXiv:2502.10008</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Chen, Green, Gulen &amp; Zhou (2024), Historical Stock Returns — arXiv:2409.11540</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A＝同儕審查期刊、B＝預印本；Wiki：https://112305003-aa.github.io/llm-finance-wiki/</li>
+</ul></div>
+
+<aside class="notes"><p>這 6 篇論文的摘要、矛盾怎麼處理，以及我的決定，都在 wiki 的比較頁裡。簡報是用一個有檢查關卡的流程，從 wiki 產生的，每一步的檢查紀錄也放在網站上。</p></aside>
+</section>
+  </main>
+  <script src="../../assets/vendor/katex/katex.min.js"></script>
+  <script src="../../assets/vendor/katex/contrib/auto-render.min.js"></script>
+  <script src="../_theme/deck.js"></script>
+</body>
+</html>

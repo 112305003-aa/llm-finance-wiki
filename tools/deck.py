@@ -7,7 +7,7 @@
     python3 tools/deck.py <指令> <slug> [參數]
 
 指令：init, approve, retrieve, coverage, check-cards, check-outline,
-      check-drafts, review-pack, record-review, render, check-render, report, status
+      check-drafts, review-pack, record-review, render, check-render, report, status, override
 """
 from __future__ import annotations
 
@@ -91,12 +91,13 @@ class Deck:
     def fail_round(self, node: str, keys: list[str]) -> bool:
         """記錄失敗；超過上限回傳 True（要停下來找使用者）。"""
         stop = []
+        extra = self.state.get("extra_rounds", 0)   # 👤 使用者以 override 授權的額外輪數
         for key in keys:
-            if self.bump(key) > NODE_CAP:
+            if self.bump(key) > NODE_CAP + extra:
                 stop.append(key)
         if node in {"G4a", "G4b", "G5"}:
             self.state["graph_rounds"] += 1
-            if self.state["graph_rounds"] > GRAPH_CAP:
+            if self.state["graph_rounds"] > GRAPH_CAP + extra:
                 stop.append(f"graph（已退回 {self.state['graph_rounds']} 輪）")
         self.save()
         if stop:
@@ -118,7 +119,7 @@ def load_pages() -> dict:
 
 def short_cite(rec: dict) -> str:
     if rec.get("type") != "source":
-        return rec.get("title", rec["slug"])
+        return "比較頁「" + rec.get("title", rec["slug"]).split("：")[0] + "」"
     first = str(rec.get("authors", rec["slug"])).split(",")[0].split(" et al")[0].strip()
     surname = first.split()[-1] if first else rec["slug"]
     return f"{surname} {rec.get('year', '')}".strip()
@@ -435,14 +436,16 @@ def md_to_html(md: str) -> str:
 
 
 def cite_line(ids, claims, pages) -> str:
-    seen = []
+    """底部「依據」：同一來源的章節合併，例如 Lopez-Lira 2023 §6.1、§6.2。"""
+    groups: dict = {}
     for c in ids:
         for e in claims.get(c, []):
-            for slug, sec in re.findall(r"\[\[([^\]|]+)(?:\|[^\]]*)?\]\][^（）§]*?§\s*([\w.]+)", e["text"]):
-                label = f"{short_cite(pages[slug])} §{sec}" if slug in pages else slug
-                if label not in seen:
-                    seen.append(label)
-    return "、".join(seen)
+            for slug, sec in re.findall(r"\[\[([^\]|]+)(?:\|[^\]]*)?\]\][^（）§]*?§\s*((?:Table|Figure|p\.)\s*[\w.]+|[^\s（）、]+)", e["text"]):
+                name = short_cite(pages[slug]) if slug in pages else slug
+                secs = groups.setdefault(name, [])
+                if f"§{sec}" not in secs:
+                    secs.append(f"§{sec}")
+    return "；".join(f"{name} {'、'.join(secs)}" for name, secs in groups.items())
 
 
 def cmd_render(deck: Deck):
@@ -543,7 +546,11 @@ def cmd_check_render(deck: Deck):
                 bottom = Math.max(bottom, (b.bottom - r.top) / k);
                 right = Math.max(right, (b.right - r.left) / k);
               });
+              const src = s.querySelector('.src');
+              const srcBox = src ? src.getBoundingClientRect() : null;
               return { bottom: Math.round(bottom), right: Math.round(right),
+                       srcLines: srcBox ? Math.round(srcBox.height / k / 20) : 0,
+                       srcRight: srcBox ? Math.round((srcBox.right - r.left) / k) : 0,
                        katexErr: s.querySelectorAll('.katex-error').length,
                        rawMath: /\\$[^$]+\\$/.test(s.querySelector('h1,h2,.body,.lead')?.innerText || '') };
             }""", i)
@@ -553,6 +560,8 @@ def cmd_check_render(deck: Deck):
                 msgs.append(f"文字超出版面底部（到 {res['bottom']}px，上限 672px）")
             if res["right"] > 1280 - 40:
                 msgs.append(f"文字超出右邊界（到 {res['right']}px）")
+            if res["srcLines"] > 1 or res["srcRight"] > 1280 - 120:
+                msgs.append("底部「依據」那一行換行或撞到頁碼")
             if res["katexErr"] or res["rawMath"]:
                 msgs.append("公式渲染失敗")
             page.wait_for_timeout(80)
@@ -598,6 +607,19 @@ def cmd_report(deck: Deck):
     deck.log("交件", "DONE", "report.md 已產生")
 
 
+def cmd_override(deck: Deck, action: str, *args):
+    """👤 只有使用者決定後才能執行：extend＝多給一輪；pass <節點>＝人工放行。"""
+    if action == "extend":
+        reason = " ".join(args) or "使用者決定"
+        deck.state["extra_rounds"] = deck.state.get("extra_rounds", 0) + 1
+        deck.log("👤 override", "EXTEND", f"使用者授權多一輪（上限變為每頁 {NODE_CAP + deck.state['extra_rounds']} 次、graph {GRAPH_CAP + deck.state['extra_rounds']} 輪）：{reason}")
+    elif action == "pass":
+        node = args[0]
+        deck.log(node, "PASS", f"👤 使用者人工放行：{' '.join(args[1:]) or '使用者決定'}")
+    else:
+        sys.exit("用法：deck.py override <slug> extend <理由> ｜ deck.py override <slug> pass <節點> <理由>")
+
+
 def cmd_status(deck: Deck):
     order = ["init", "👤 brief", "N1", "G1", "G2", "G3", "👤 outline", "G4a", "G4b", "N5", "G5", "交件"]
     for node in order:
@@ -609,13 +631,14 @@ def cmd_status(deck: Deck):
 COMMANDS = {"init": cmd_init, "approve": cmd_approve, "retrieve": cmd_retrieve, "coverage": cmd_coverage,
             "check-cards": cmd_check_cards, "check-outline": cmd_check_outline, "check-drafts": cmd_check_drafts,
             "review-pack": cmd_review_pack, "record-review": cmd_record_review, "render": cmd_render,
-            "check-render": cmd_check_render, "report": cmd_report, "status": cmd_status}
+            "check-render": cmd_check_render, "report": cmd_report, "status": cmd_status,
+            "override": cmd_override}
 
 if __name__ == "__main__":
     if len(sys.argv) < 3 or sys.argv[1] not in COMMANDS:
         print(__doc__)
         sys.exit(2)
     d = Deck(sys.argv[2])
-    if d.state["events"] and d.state["events"][-1]["result"] == "STOP" and sys.argv[1] not in {"status", "approve"}:
+    if d.state["events"] and d.state["events"][-1]["result"] == "STOP" and sys.argv[1] not in {"status", "approve", "override"}:
         print("⚠️ 上一步是 STOP（需要使用者決定）。使用者處理後再繼續。")
     COMMANDS[sys.argv[1]](d, *sys.argv[3:])

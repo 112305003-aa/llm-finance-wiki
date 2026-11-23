@@ -1,0 +1,398 @@
+[
+ {
+  "id": "Q1",
+  "core": true,
+  "text": "讓電腦讀新聞判斷好壞消息是什麼？LLM 之前怎麼做？",
+  "keywords": [
+   "情緒分析",
+   "sentiment",
+   "FinBERT"
+  ],
+  "pages": [
+   {
+    "slug": "financial-sentiment-analysis",
+    "type": "concept",
+    "score": 23
+   },
+   {
+    "slug": "2024-kirtac-sentiment-trading",
+    "type": "source",
+    "score": 19
+   },
+   {
+    "slug": "2019-araci-finbert",
+    "type": "source",
+    "score": 16
+   },
+   {
+    "slug": "zero-shot-vs-fine-tuned-sentiment",
+    "type": "comparison",
+    "score": 15
+   },
+   {
+    "slug": "news-return-predictability",
+    "type": "concept",
+    "score": 11
+   },
+   {
+    "slug": "long-short-sentiment-strategy",
+    "type": "concept",
+    "score": 10
+   },
+   {
+    "slug": "2023-lopez-lira-chatgpt-forecast",
+    "type": "source",
+    "score": 8
+   },
+   {
+    "slug": "domain-specific-pretraining",
+    "type": "concept",
+    "score": 7
+   },
+   {
+    "slug": "model-scale",
+    "type": "concept",
+    "score": 7
+   },
+   {
+    "slug": "2023-glasserman-look-ahead-bias",
+    "type": "source",
+    "score": 6
+   },
+   {
+    "slug": "distraction-effect",
+    "type": "concept",
+    "score": 3
+   },
+   {
+    "slug": "2025-chen-chatgpt-deepseek",
+    "type": "source",
+    "score": 3
+   },
+   {
+    "slug": "transaction-costs",
+    "type": "concept",
+    "score": 2
+   },
+   {
+    "slug": "market-efficiency",
+    "type": "concept",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "id": "Q2",
+  "core": true,
+  "text": "ChatGPT 給的情緒分數能預測隔天股價嗎？",
+  "keywords": [
+   "ChatGPT",
+   "隔日報酬",
+   "可預測性",
+   "標題"
+  ],
+  "pages": [
+   {
+    "slug": "news-return-predictability",
+    "type": "concept",
+    "score": 17
+   },
+   {
+    "slug": "2025-chen-chatgpt-deepseek",
+    "type": "source",
+    "score": 16
+   },
+   {
+    "slug": "2023-glasserman-look-ahead-bias",
+    "type": "source",
+    "score": 9
+   },
+   {
+    "slug": "2023-lopez-lira-chatgpt-forecast",
+    "type": "source",
+    "score": 8
+   },
+   {
+    "slug": "aggregate-market-prediction",
+    "type": "concept",
+    "score": 7
+   },
+   {
+    "slug": "stock-vs-market-news-asymmetry",
+    "type": "comparison",
+    "score": 6
+   },
+   {
+    "slug": "look-ahead-bias",
+    "type": "concept",
+    "score": 6
+   },
+   {
+    "slug": "in-sample-vs-out-of-sample-llm-backtest",
+    "type": "comparison",
+    "score": 5
+   },
+   {
+    "slug": "zero-shot-vs-fine-tuned-sentiment",
+    "type": "comparison",
+    "score": 5
+   },
+   {
+    "slug": "distraction-effect",
+    "type": "concept",
+    "score": 5
+   },
+   {
+    "slug": "long-short-sentiment-strategy",
+    "type": "concept",
+    "score": 5
+   },
+   {
+    "slug": "market-efficiency",
+    "type": "concept",
+    "score": 5
+   },
+   {
+    "slug": "model-scale",
+    "type": "concept",
+    "score": 5
+   },
+   {
+    "slug": "transaction-costs",
+    "type": "concept",
+    "score": 5
+   },
+   {
+    "slug": "financial-sentiment-analysis",
+    "type": "concept",
+    "score": 4
+   },
+   {
+    "slug": "2024-chen-historical-returns",
+    "type": "source",
+    "score": 4
+   },
+   {
+    "slug": "2024-kirtac-sentiment-trading",
+    "type": "source",
+    "score": 2
+   },
+   {
+    "slug": "llm-behavioral-bias",
+    "type": "concept",
+    "score": 1
+   },
+   {
+    "slug": "2019-araci-finbert",
+    "type": "source",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "id": "Q3",
+  "core": true,
+  "text": "扣掉交易成本還有用嗎？哪種模型比較好？",
+  "keywords": [
+   "交易成本",
+   "Sharpe",
+   "多空",
+   "OPT"
+  ],
+  "pages": [
+   {
+    "slug": "2024-kirtac-sentiment-trading",
+    "type": "source",
+    "score": 27
+   },
+   {
+    "slug": "long-short-sentiment-strategy",
+    "type": "concept",
+    "score": 23
+   },
+   {
+    "slug": "zero-shot-vs-fine-tuned-sentiment",
+    "type": "comparison",
+    "score": 11
+   },
+   {
+    "slug": "transaction-costs",
+    "type": "concept",
+    "score": 11
+   },
+   {
+    "slug": "2023-lopez-lira-chatgpt-forecast",
+    "type": "source",
+    "score": 10
+   },
+   {
+    "slug": "news-return-predictability",
+    "type": "concept",
+    "score": 4
+   },
+   {
+    "slug": "2023-glasserman-look-ahead-bias",
+    "type": "source",
+    "score": 4
+   },
+   {
+    "slug": "model-scale",
+    "type": "concept",
+    "score": 3
+   },
+   {
+    "slug": "2025-chen-chatgpt-deepseek",
+    "type": "source",
+    "score": 2
+   },
+   {
+    "slug": "distraction-effect",
+    "type": "concept",
+    "score": 1
+   },
+   {
+    "slug": "financial-sentiment-analysis",
+    "type": "concept",
+    "score": 1
+   },
+   {
+    "slug": "market-efficiency",
+    "type": "concept",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "id": "Q4",
+  "core": true,
+  "text": "會不會是模型早就「看過答案」？",
+  "keywords": [
+   "前瞻偏誤",
+   "look-ahead",
+   "匿名化",
+   "分心效應"
+  ],
+  "pages": [
+   {
+    "slug": "look-ahead-bias",
+    "type": "concept",
+    "score": 26
+   },
+   {
+    "slug": "distraction-effect",
+    "type": "concept",
+    "score": 20
+   },
+   {
+    "slug": "2023-glasserman-look-ahead-bias",
+    "type": "source",
+    "score": 18
+   },
+   {
+    "slug": "in-sample-vs-out-of-sample-llm-backtest",
+    "type": "comparison",
+    "score": 8
+   },
+   {
+    "slug": "2025-chen-chatgpt-deepseek",
+    "type": "source",
+    "score": 5
+   },
+   {
+    "slug": "2024-chen-historical-returns",
+    "type": "source",
+    "score": 4
+   },
+   {
+    "slug": "llm-behavioral-bias",
+    "type": "concept",
+    "score": 3
+   },
+   {
+    "slug": "2023-lopez-lira-chatgpt-forecast",
+    "type": "source",
+    "score": 3
+   },
+   {
+    "slug": "news-return-predictability",
+    "type": "concept",
+    "score": 2
+   },
+   {
+    "slug": "financial-sentiment-analysis",
+    "type": "concept",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "id": "Q5",
+  "core": false,
+  "text": "能不能預測整個市場或總經？",
+  "keywords": [
+   "總經",
+   "市場報酬",
+   "DeepSeek",
+   "macro"
+  ],
+  "pages": [
+   {
+    "slug": "2025-chen-chatgpt-deepseek",
+    "type": "source",
+    "score": 19
+   },
+   {
+    "slug": "aggregate-market-prediction",
+    "type": "concept",
+    "score": 17
+   },
+   {
+    "slug": "stock-vs-market-news-asymmetry",
+    "type": "comparison",
+    "score": 5
+   },
+   {
+    "slug": "in-sample-vs-out-of-sample-llm-backtest",
+    "type": "comparison",
+    "score": 3
+   },
+   {
+    "slug": "model-scale",
+    "type": "concept",
+    "score": 3
+   },
+   {
+    "slug": "look-ahead-bias",
+    "type": "concept",
+    "score": 2
+   },
+   {
+    "slug": "market-efficiency",
+    "type": "concept",
+    "score": 2
+   }
+  ]
+ },
+ {
+  "id": "Q6",
+  "core": false,
+  "text": "LLM 自己有沒有行為偏誤？",
+  "keywords": [
+   "外推",
+   "extrapolation",
+   "行為偏誤"
+  ],
+  "pages": [
+   {
+    "slug": "llm-behavioral-bias",
+    "type": "concept",
+    "score": 20
+   },
+   {
+    "slug": "2024-chen-historical-returns",
+    "type": "source",
+    "score": 10
+   }
+  ]
+ }
+]

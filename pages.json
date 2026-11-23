@@ -1,0 +1,52 @@
+{
+ "generated": "2026-11-23",
+ "pages": [
+  {
+   "slug": "index",
+   "path": "wiki/index.md",
+   "title": "目錄",
+   "type": "meta",
+   "summary": "自動產生的全站目錄（請勿手動編輯）",
+   "tags": [
+    "meta"
+   ],
+   "aliases": [],
+   "sources": [],
+   "updated": "2026-11-23",
+   "links": [
+    "log",
+    "overview"
+   ]
+  },
+  {
+   "slug": "log",
+   "path": "wiki/log.md",
+   "title": "工作日誌",
+   "type": "meta",
+   "summary": "依時間記錄每次 ingest、lint、簡報產出（只能往後加）",
+   "tags": [
+    "meta"
+   ],
+   "aliases": [],
+   "sources": [],
+   "updated": "2026-11-23",
+   "links": []
+  },
+  {
+   "slug": "overview",
+   "path": "wiki/overview.md",
+   "title": "總覽：LLM 在金融與量化交易",
+   "type": "overview",
+   "summary": "這個 wiki 在回答什麼問題、目前的主論點是什麼",
+   "tags": [
+    "meta"
+   ],
+   "aliases": [],
+   "sources": [],
+   "updated": "2026-11-23",
+   "links": [
+    "index"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,78 @@
+/* 簡報共用主題（AGENTS.md §6.4）。視覺風格之後再與使用者討論；改這裡會影響所有簡報。 */
+:root {
+  --accent: #2563eb;
+  --accent-soft: #eff4ff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --warn: #b45309;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --mono: "SFMono-Regular", Menlo, Consolas, monospace;
+  --scale: 1;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0f172a; overflow: hidden; font-family: var(--font); color: var(--text); }
+
+/* 舞台：固定 1280×720（16:9），依視窗等比縮放 */
+.deck {
+  position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px;
+  transform: translate(-50%, -50%) scale(var(--scale)); transform-origin: center;
+}
+.slide {
+  position: absolute; inset: 0; display: none; flex-direction: column;
+  background: #fff; padding: 64px 80px 56px; border-radius: 4px; overflow: hidden;
+}
+.slide.active { display: flex; }
+.slide aside.notes { display: none; }
+
+/* 文字層級 */
+.slide h1 { font-size: 56px; line-height: 1.2; margin: 0 0 18px; }
+.slide h2 { font-size: 40px; line-height: 1.25; margin: 0 0 10px; }
+.slide .lead { font-size: 24px; color: var(--accent); font-weight: 600; margin: 0 0 28px; }
+.slide ul, .slide ol { font-size: 26px; line-height: 1.6; margin: 0; padding-left: 1.2em; }
+.slide li + li { margin-top: 8px; }
+.slide p { font-size: 24px; line-height: 1.6; margin: 0 0 14px; }
+.slide code { font-family: var(--mono); font-size: .85em; background: #f3f4f6; padding: .1em .35em; border-radius: 4px; }
+.slide .body { flex: 1; min-height: 0; }
+
+/* 封面 */
+.slide.cover { justify-content: center; background: linear-gradient(135deg, #fff 60%, var(--accent-soft)); }
+.slide.cover .subtitle { font-size: 28px; color: var(--muted); margin: 0 0 40px; }
+.slide.cover .meta { font-size: 20px; color: var(--muted); }
+
+/* 版面元件 */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.formula { font-size: 30px; padding: 18px 24px; background: var(--accent-soft); border-radius: 10px; margin: 8px 0 18px; text-align: center; }
+.callout { border-left: 6px solid var(--accent); background: var(--accent-soft); padding: 14px 20px; font-size: 22px; border-radius: 0 8px 8px 0; margin-top: 16px; }
+.callout.warn { border-left-color: var(--warn); background: #fff7ed; }
+.slide table { border-collapse: collapse; width: 100%; font-size: 21px; }
+.slide th, .slide td { border: 1px solid var(--line); padding: 10px 14px; text-align: left; vertical-align: top; }
+.slide th { background: #f8fafc; }
+.refs { font-size: 18px; line-height: 1.55; }
+.refs li + li { margin-top: 4px; }
+.tag-later { display: inline-block; font-size: 14px; color: var(--warn); border: 1px solid var(--warn); border-radius: 999px; padding: 0 8px; margin-left: 6px; vertical-align: middle; }
+
+/* 每頁底部：依據 */
+.slide .src { position: absolute; left: 80px; bottom: 22px; font-size: 14px; color: var(--muted); }
+.slide .pageno { position: absolute; right: 40px; bottom: 22px; font-size: 14px; color: var(--muted); }
+
+/* 操作介面 */
+.progress { position: fixed; left: 0; bottom: 0; height: 4px; background: var(--accent); transition: width .2s; z-index: 5; }
+.notes-panel {
+  position: fixed; left: 0; right: 0; bottom: 0; max-height: 34vh; overflow-y: auto; z-index: 6;
+  background: rgba(15,23,42,.95); color: #e2e8f0; font-size: 17px; line-height: 1.7; padding: 16px 28px 22px;
+  display: none;
+}
+.notes-panel.show { display: block; }
+.notes-panel h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: .08em; color: #94a3b8; }
+.hint { position: fixed; right: 14px; top: 10px; font-size: 12px; color: #64748b; z-index: 5; }
+
+/* 列印：每頁一張，不印操作介面與講者稿 */
+@media print {
+  @page { size: 1280px 720px; margin: 0; }
+  html, body { overflow: visible; background: #fff; height: auto; }
+  .deck { position: static; transform: none; width: auto; height: auto; }
+  .slide { display: flex !important; position: relative; width: 1280px; height: 720px; page-break-after: always; border-radius: 0; }
+  .progress, .notes-panel, .hint { display: none !important; }
+}

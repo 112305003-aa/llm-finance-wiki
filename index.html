@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM × 金融 Wiki</title>
+  <meta name="description" content="依照 Karpathy LLM Wiki 模式、由 AI 維護的「LLM 在金融與量化交易」知識庫">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-toggle" id="menuToggle" aria-label="開啟目錄">☰</button>
+    <a class="brand" href="#/overview"><span class="brand-mark">FW</span>LLM × 金融 Wiki</a>
+    <nav class="top-links">
+      <a href="#/index">目錄</a>
+      <a href="#/log">日誌</a>
+      <a href="decks/">教學簡報</a>
+      <a href="#/agents">規則手冊</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <input type="search" id="search" class="search" placeholder="搜尋標題、摘要、標籤…" autocomplete="off">
+      <nav id="nav" aria-label="wiki 頁面"></nav>
+      <p class="sidebar-note">由 AI 依 <a href="#/agents">AGENTS.md</a> 維護<br>原始資料在 <code>raw/</code></p>
+    </aside>
+
+    <main class="content" id="content">
+      <p class="loading">載入中…</p>
+    </main>
+  </div>
+
+  <script src="assets/vendor/marked.min.js"></script>
+  <script src="assets/vendor/purify.min.js"></script>
+  <script src="assets/vendor/katex/katex.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# 論文全文只留在本機（版權），公開 repo 只放來源卡與連結
+raw/*.pdf
+__pycache__/
+.DS_Store
+

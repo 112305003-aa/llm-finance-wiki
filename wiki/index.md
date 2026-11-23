@@ -8,7 +8,7 @@ updated: 2026-11-23
 
 > 本頁由 `python3 tools/wiki.py build` 自動產生，請勿手動編輯。
 
-共 22 頁。
+共 23 頁。
 
 ## 總覽（1）
 
@@ -33,6 +33,10 @@ updated: 2026-11-23
 - [[in-sample-vs-out-of-sample-llm-backtest|樣本內 vs 樣本外：在 LLM 訓練期間內回測可不可以？]] — 本 wiki 以知識截止日之後的樣本外結果為標準，樣本內結果保留但加警語
 - [[stock-vs-market-news-asymmetry|個股 vs 大盤：好消息與壞消息，哪個被市場慢慢消化？]] — 個股層次是壞消息反應不足，大盤層次是好消息反應不足；兩篇研究的層次與頻率不同
 - [[zero-shot-vs-fine-tuned-sentiment|直接問 vs 用報酬微調：兩篇論文的情緒交易結果為何打架]] — Lopez-Lira & Tang 與 Kirtac & Germano 對 BERT／FinBERT 能否交易得出相反結論，差在方法與樣本切分
+
+## 策略點子（1）
+
+- [[strategy-ideas|策略點子清單]] — 從已 ingest 的文獻整理出可回測的新聞情緒點子（不是投資建議）
 
 ## 來源（6）
 

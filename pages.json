@@ -421,6 +421,31 @@
    ]
   },
   {
+   "slug": "strategy-ideas",
+   "path": "wiki/ideas/strategy-ideas.md",
+   "title": "策略點子清單",
+   "type": "ideas",
+   "summary": "從已 ingest 的文獻整理出可回測的新聞情緒點子（不是投資建議）",
+   "tags": [
+    "trading-strategy",
+    "sentiment"
+   ],
+   "aliases": [],
+   "sources": [
+    "2023-lopez-lira-chatgpt-forecast",
+    "2023-glasserman-look-ahead-bias",
+    "2025-chen-chatgpt-deepseek",
+    "2024-kirtac-sentiment-trading"
+   ],
+   "updated": "2026-11-23",
+   "links": [
+    "2023-glasserman-look-ahead-bias",
+    "2023-lopez-lira-chatgpt-forecast",
+    "2025-chen-chatgpt-deepseek",
+    "in-sample-vs-out-of-sample-llm-backtest"
+   ]
+  },
+  {
    "slug": "index",
    "path": "wiki/index.md",
    "title": "目錄",
@@ -453,6 +478,7 @@
     "news-return-predictability",
     "overview",
     "stock-vs-market-news-asymmetry",
+    "strategy-ideas",
     "transaction-costs",
     "zero-shot-vs-fine-tuned-sentiment"
    ]
@@ -494,6 +520,7 @@
     "in-sample-vs-out-of-sample-llm-backtest",
     "index",
     "stock-vs-market-news-asymmetry",
+    "strategy-ideas",
     "zero-shot-vs-fine-tuned-sentiment"
    ]
   },

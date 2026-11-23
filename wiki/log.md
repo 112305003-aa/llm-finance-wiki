@@ -33,3 +33,4 @@ updated: 2026-11-23
 - 新增：wiki/comparisons/zero-shot-vs-fine-tuned-sentiment.md
 - 修改：三處 ⚠️ 改為「已處理」、overview 加第 3 點
 - 備註：使用者決定「並陳＋點出條件差異」，簡報用作教學例子
+- 上一個 commit 時 lint 還有 5 個 ERROR（表格績效條件寫在表外，lint 逐行檢查不認）→ 改成每列附條件；違反「lint 有 ERROR 不算完成」，補一個修正 commit
